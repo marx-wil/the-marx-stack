@@ -24,273 +24,32 @@ import HeroSection from "../../components/heroSection";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
 import { useState } from "react";
+import pagesConfig from "../../data/pagesConfig.json";
 
 const WorkHistoryContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeModal, setActiveModal] = useState(null);
+  const config = pagesConfig.workHistory;
 
   const textColor = useColorModeValue("gray.600", "gray.400");
   const cardBg = useColorModeValue("white", "gray.800");
   const cardBorderColor = useColorModeValue("gray.200", "gray.700");
   const headingColor = useColorModeValue("gray.800", "gray.200");
 
-  const jobWidgets = [
-    {
-      id: "cto-sysgo-solutions",
-      icon: FaCode,
-      title: "Chief Technology Officer",
-      company: "SysGo Solutions",
-      duration: "2023 - Present",
-      status: "Current",
-      color: "blue",
-      description:
-        "Leading technical strategy and full-stack development for a startup team providing comprehensive systems for dental clinics.",
-      responsibilities: [
-        "Architect and develop full-stack dental clinic management systems",
-        "Lead technical strategy and technology stack decisions",
-        "Build scalable web applications using Next.js, React, and TypeScript",
-        "Design and implement secure backend APIs with Node.js and Express",
-        "Develop mobile applications for clinic staff using React Native and Expo",
-        "Manage database design and optimization for healthcare data",
-        "Implement HIPAA-compliant security measures and data protection",
-        "Lead development team and establish coding standards",
-        "Plan and execute product roadmap and feature development",
-      ],
-      technologies: [
-        "Next.js 15.1.4",
-        "React 19.0.0-rc.1",
-        "TypeScript 5.x",
-        "Expo SDK 53",
-        "React Native 0.79.4",
-        "Node.js ≥18",
-        "Express.js 4.18.2",
-        "MySQL 2",
-        "JWT & bcryptjs",
-        "Chakra UI & MUI 5",
-        "ApexCharts",
-        "Render.com",
-      ],
-      achievements: [
-        "Built comprehensive dental clinic management system from scratch",
-        "Implemented HIPAA-compliant data security and patient privacy protection",
-        "Developed mobile app for clinic staff with real-time patient data access",
-        "Established scalable architecture supporting multiple clinic locations",
-        "Reduced clinic administrative tasks by 60% through automation",
-      ],
-    },
-    {
-      id: "software-engineer-stappl",
-      icon: FaServer,
-      title: "Software Engineer",
-      company: "Stappl",
-      duration: "2023 - Present",
-      status: "Current",
-      color: "green",
-      description:
-        "Developing innovative software solutions and contributing to cutting-edge technology projects.",
-      responsibilities: [
-        "Develop and maintain web applications using modern frameworks",
-        "Implement responsive UI components with React and TypeScript",
-        "Build secure backend services and API integrations",
-        "Collaborate with cross-functional teams on product development",
-        "Write clean, maintainable code following best practices",
-        "Participate in code reviews and technical discussions",
-        "Contribute to system architecture and design decisions",
-        "Implement testing strategies and quality assurance processes",
-      ],
-      technologies: [
-        "React 19",
-        "TypeScript 5.x",
-        "Node.js",
-        "Express.js",
-        "MySQL",
-        "Chakra UI",
-        "Material UI",
-        "Jest & RTL",
-        "Git",
-        "Docker",
-      ],
-      achievements: [
-        // "Contributed to multiple high-impact software projects",
-        // "Improved application performance and user experience",
-        // "Implemented robust testing frameworks reducing bugs by 40%",
-        // "Collaborated effectively with diverse development teams",
-        // "Delivered features on time with high code quality standards",
-      ],
-    },
-    {
-      id: "it-incharge-asia-scopro",
-      icon: FaDatabase,
-      title: "IT Administrator",
-      company: "Asia Scopro Optics Co., Inc.",
-      duration: "July 2024 - Present",
-      status: "Current",
-      color: "purple",
-      description:
-        "Administering and maintaining comprehensive IT infrastructure including servers, networks, and Fortinet firewall systems.",
-      responsibilities: [
-        "Administer and maintain IT infrastructure (servers, network systems, Fortinet firewalls)",
-        "Ensure high availability and security of all IT systems",
-        "Conduct daily troubleshooting for software, hardware, and connectivity issues",
-        "Implement and enforce IT policies aligned with cybersecurity best practices",
-        "Manage data security through file-sharing policies and user access control",
-        "Create and maintain user accounts, policies, and email systems on servers",
-        "Monitor IT MIS for operational efficiency and system health",
-        "Purchase, deploy, and manage IT hardware, supplies, and network equipment",
-        "Provide end-user support, training, and system access assistance",
-        "Maintain network performance through monitoring and optimization",
-      ],
-      technologies: [
-        "Fortinet Firewall",
-        "Windows Server",
-        "Active Directory",
-        "Network Administration",
-        "Cybersecurity",
-        "IT Infrastructure",
-        "System Monitoring",
-        "Backup Solutions",
-        "Email Systems",
-        "Hardware Management",
-      ],
-      achievements: [
-        "Maintained 99.9% system uptime across all IT infrastructure",
-        "Reduced security incidents by 80% through improved policies",
-        "Streamlined IT operations saving 15 hours per week",
-        "Successfully managed network migration with zero downtime",
-        "Implemented comprehensive backup system protecting critical data",
-      ],
-    },
-    {
-      id: "it-specialist-healthier-fit",
-      icon: FaServer,
-      title: "IT Specialist / IT Lead",
-      company: "Healthier Fit Co. LTD.",
-      duration: "1 Year 2 Months",
-      status: "Completed",
-      color: "green",
-      description:
-        "Led IT department team members and provided comprehensive IT support across software, hardware, networks, and systems.",
-      responsibilities: [
-        "Led and motivated IT department team members to align with organizational goals",
-        "Delivered full-stack IT support across software, hardware, networks, servers, and systems",
-        "Installed and configured networks to support company operations",
-        "Conducted troubleshooting and maintenance for systems, hardware, and user workstations",
-        "Regularly evaluated IT systems to ensure scalability and efficiency",
-        "Handled network administration, access control, and performance monitoring",
-        "Provided user training on network security and safe computer usage practices",
-        "Anticipated IT resource needs and prepared cost reports for hardware/software upgrades",
-        "Supported daily IT operations ensuring minimal downtime and reliable network connectivity",
-      ],
-      technologies: [
-        "Network Administration",
-        "System Administration",
-        "Hardware Management",
-        "Software Installation",
-        "User Training",
-        "IT Security",
-        "Network Configuration",
-        "Troubleshooting",
-        "System Monitoring",
-        "Cost Management",
-      ],
-      achievements: [
-        "Led IT team to achieve 99.5% system uptime across all operations",
-        "Reduced IT support tickets by 45% through proactive maintenance",
-        "Successfully implemented network security protocols reducing incidents by 70%",
-        "Trained 50+ employees on IT security best practices",
-        "Optimized IT infrastructure saving company $25K annually",
-      ],
-    },
-    {
-      id: "intern-tesda",
-      icon: FaGraduationCap,
-      title: "IT Department and Assessment Team Intern",
-      company: "TESDA PTC-LLDA",
-      duration: "3 Months",
-      status: "Completed",
-      color: "teal",
-      description:
-        "Gained foundational experience in IT operations, data management, and system administration in a government training institution.",
-      responsibilities: [
-        "Accurately encoded and verified data in the company database ensuring accuracy and timeliness",
-        "Organized and maintained records, files, and databases for easy accessibility",
-        "Assisted in creating standardized procedures for data entry and IT processes",
-        "Provided IT support on software, hardware, networks, and user systems",
-        "Installed new software and hardware components to support daily operations",
-        "Troubleshot systems and user workstations ensuring smooth operation of networks",
-        "Collaborated with team members to ensure data accuracy, security, and consistency",
-        "Responded to data inquiries and IT concerns promptly with excellent customer service",
-      ],
-      technologies: [
-        "Database Management",
-        "Data Entry & Verification",
-        "System Administration",
-        "Hardware Installation",
-        "Software Installation",
-        "Network Troubleshooting",
-        "IT Support",
-        "Record Management",
-        "Customer Service",
-        "Process Documentation",
-      ],
-      achievements: [
-        "Successfully completed 3-month internship program with excellent performance",
-        "Maintained 100% data accuracy across all database entries",
-        "Improved data processing efficiency by 30% through standardized procedures",
-        "Received positive feedback from supervisors and team members",
-        "Contributed to streamlining IT processes and documentation",
-      ],
-    },
-    {
-      id: "freelance",
-      icon: FaUsers,
-      title: "Freelance Full-Stack Developer",
-      company: "Various Clients",
-      duration: "2018 - Present",
-      status: "Ongoing",
-      color: "pink",
-      description:
-        "Providing comprehensive full-stack development services to diverse clients, combining software development expertise with IT infrastructure knowledge.",
-      responsibilities: [
-        "Develop custom web applications using React, Next.js, and TypeScript",
-        "Build mobile applications with React Native and Expo",
-        "Create secure backend APIs with Node.js, Express, and MySQL",
-        "Implement data visualization dashboards and interactive maps",
-        "Provide IT consulting and system architecture recommendations",
-        "Manage project timelines, budgets, and client communications",
-        "Maintain and optimize existing applications for performance",
-        "Provide ongoing support and maintenance for deployed systems",
-        "Integrate IT infrastructure solutions with custom software development",
-      ],
-      technologies: [
-        "Next.js 15",
-        "React 19",
-        "TypeScript 5.x",
-        "React Native",
-        "Expo SDK",
-        "Node.js",
-        "Express.js",
-        "MySQL",
-        "Chakra UI",
-        "Material UI",
-        "ApexCharts",
-        "Google Maps API",
-        "JWT Authentication",
-        "Render.com",
-        "IT Infrastructure",
-        "System Administration",
-      ],
-      achievements: [
-        "Completed 30+ freelance projects across web, mobile, and IT infrastructure",
-        "Maintained 98% client satisfaction rate with 5-star reviews",
-        "Built long-term relationships with 10+ recurring clients",
-        "Successfully launched 5 mobile applications on app stores",
-        "Generated $100K+ in freelance revenue over 6 years",
-        "Specialized in healthcare, e-commerce, and business automation solutions",
-        "Combined software development with IT infrastructure expertise",
-      ],
-    },
-  ];
+  // Icon mapping for dynamic icon loading
+  const iconMap = {
+    FaCode,
+    FaServer,
+    FaDatabase,
+    FaUsers,
+    FaRocket,
+    FaGraduationCap,
+  };
+
+  const jobWidgets = config.jobWidgets.map(job => ({
+    ...job,
+    icon: iconMap[job.icon]
+  }));
 
   const handleWidgetClick = (widgetId) => {
     setActiveModal(widgetId);
@@ -437,7 +196,11 @@ const WorkHistoryContent = () => {
       pb={8}
     >
       <VStack align="flex-start" spacing={4}>
-        <HeroHeader title="My Work" subtitle="Hi" highlightText="story" />
+        <HeroHeader 
+          title={config.hero.title} 
+          subtitle={config.hero.subtitle} 
+          highlightText={config.hero.highlightText} 
+        />
       </VStack>
 
       <Box>
@@ -449,7 +212,7 @@ const WorkHistoryContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Explore My Professional Journey
+          {config.sectionTitle}
         </Text>
 
         <Grid
@@ -589,12 +352,13 @@ const WorkHistoryContent = () => {
 const HeroWithContent = HeroSection(WorkHistoryContent);
 
 const WorkHistory = () => {
+  const config = pagesConfig.workHistory;
   return (
     <HeroWithContent
-      footerHead="Would you like to"
-      footerBody="Work with me?"
-      footerSub="Click to view"
-      navigateTo="/contact"
+      footerHead={config.footer.head}
+      footerBody={config.footer.body}
+      footerSub={config.footer.sub}
+      navigateTo={config.footer.navigateTo}
     />
   );
 };

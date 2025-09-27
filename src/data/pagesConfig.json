@@ -1,0 +1,759 @@
+{
+  "default": {
+    "hero": {
+      "name": "Wilmarx John",
+      "typingWords": ["developer.", "designer.", "technologist."],
+      "typingSpeed": 100,
+      "deletingSpeed": 50,
+      "pauseSpeed": 1500,
+      "wordPauseSpeed": 500
+    },
+    "footer": {
+      "head": "Learn more",
+      "body": "About me",
+      "sub": "Click to view",
+      "navigateTo": "/about"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About",
+      "subtitle": "I am, ",
+      "highlightText": "Me"
+    },
+    "textContent": [
+      {
+        "content": "Hi, I'm Wilmarx — a systems developer and tech enthusiast with a lifelong curiosity for how things work beneath the surface. That fascination with the inner workings of technology led me into the world of IT and systems development, where I get to turn that passion into purposeful work."
+      },
+      {
+        "content": "As an IT professional, I help design and maintain systems that keep operations running smoothly and securely. Whether configuring servers, managing backend logic, or troubleshooting issues, I enjoy building tools that are efficient, reliable, and impactful.",
+        "display": { "base": "none", "xl": "block" }
+      },
+      {
+        "content": "I'm also growing as a systems developer, diving into frontend and backend technologies to craft seamless digital experiences. I'm always eager to learn and adapt — because in tech, there's always something new to explore and improve.",
+        "display": { "base": "none", "md": "block" }
+      }
+    ],
+    "image": {
+      "src": "../../assets/me/myphoto.jpg",
+      "footerTag": "Passionate Developer"
+    },
+    "sectionTitle": "Explore My Expertise",
+    "interactiveWidgets": [
+      {
+        "id": "frontend",
+        "icon": "FaCode",
+        "title": "Frontend Excellence",
+        "subtitle": "Next.js 15 • React 19 • TypeScript 5.x",
+        "color": "blue",
+        "description": "Crafting modern, responsive web applications with cutting-edge frameworks and UI libraries.",
+        "details": [
+          "Next.js 15.1.4 with App Router and Server Components",
+          "React 19.0.0-rc.1 with latest features and optimizations",
+          "TypeScript 4.9.4/5.x for type-safe development",
+          "Chakra UI and Material UI (MUI 5) for component libraries",
+          "Refine.dev for rapid admin panel development",
+          "Emotion and NativeWind for styling solutions",
+          "Framer Motion for smooth animations",
+          "React Router v6 and Expo Router for navigation",
+          "React Hook Form for efficient form handling"
+        ]
+      },
+      {
+        "id": "mobile",
+        "icon": "FaRocket",
+        "title": "Mobile Development",
+        "subtitle": "Expo SDK 53 • React Native 0.79.4",
+        "color": "cyan",
+        "description": "Building cross-platform mobile applications with React Native and Expo ecosystem.",
+        "details": [
+          "Expo SDK 53 with latest native modules and APIs",
+          "React Native 0.79.4 with React 19.0.0 support",
+          "React Navigation 7.x for seamless navigation",
+          "Expo modules: Blur, Constants, Font, Haptics, Image",
+          "Expo Linking, Splash Screen, Status Bar, Symbols",
+          "NativeWind for Tailwind CSS in React Native",
+          "Expo Vector Icons for comprehensive icon sets",
+          "System UI and Web Browser integrations"
+        ]
+      },
+      {
+        "id": "backend",
+        "icon": "FaServer",
+        "title": "Backend Engineering",
+        "subtitle": "Node.js ≥18 • Express.js 4.18.2 • TypeScript",
+        "color": "green",
+        "description": "Building secure, scalable server-side applications with modern Node.js ecosystem.",
+        "details": [
+          "Node.js (≥18) with Express.js 4.18.2 framework",
+          "TypeScript for type-safe backend development",
+          "MySQL 2 (mysql2) for robust database operations",
+          "JWT authentication with access & refresh tokens",
+          "bcryptjs for secure password hashing",
+          "Helmet for security headers and CORS protection",
+          "Express Validator for input validation",
+          "Express Rate Limit and Express Slow Down for API protection",
+          "Socket.io for real-time communication",
+          "Multer for file uploads, Morgan for logging",
+          "Compression and dotenv for optimization"
+        ]
+      },
+      {
+        "id": "data-viz",
+        "icon": "FaChartLine",
+        "title": "Data Visualization",
+        "subtitle": "ApexCharts • Maps • Tables",
+        "color": "purple",
+        "description": "Creating interactive data visualizations and mapping solutions for complex datasets.",
+        "details": [
+          "ApexCharts and React ApexCharts for dynamic charts",
+          "Mapbox GL and Google Maps API integration",
+          "React Calendar for scheduling interfaces",
+          "TanStack React Table for advanced data tables",
+          "Custom visualization components and dashboards",
+          "Real-time data updates and interactive features"
+        ]
+      },
+      {
+        "id": "dev-tools",
+        "icon": "FaTools",
+        "title": "Development Tools",
+        "subtitle": "Vite • Jest • ESLint • Prettier",
+        "color": "orange",
+        "description": "Modern development workflow with cutting-edge build tools and testing frameworks.",
+        "details": [
+          "Vite, Expo, and Next.js for fast bundling",
+          "Jest and React Testing Library for comprehensive testing",
+          "ESLint and Prettier for code quality and formatting",
+          "Babel 7 for JavaScript transpilation",
+          "PostCSS + Autoprefixer for CSS processing",
+          "Nodemon for development server automation",
+          "Git workflows and version control best practices"
+        ]
+      },
+      {
+        "id": "ui-components",
+        "icon": "FaPalette",
+        "title": "UI Components & Utilities",
+        "subtitle": "React Icons • Dropzone • Scrollbars",
+        "color": "pink",
+        "description": "Comprehensive UI component libraries and utility tools for enhanced user experiences.",
+        "details": [
+          "React Icons, MUI Icons, and Expo Vector Icons",
+          "React Dropzone for file handling interfaces",
+          "React Custom Scrollbars for enhanced scrolling",
+          "Refine.dev ecosystem (@refinedev/core, mui, cli)",
+          "Admin framework with devtools and kbar integration",
+          "Custom component development and theming"
+        ]
+      },
+      {
+        "id": "deployment",
+        "icon": "FaCloud",
+        "title": "Deployment & Security",
+        "subtitle": "Render.com • Expo/EAS • Security First",
+        "color": "teal",
+        "description": "Secure deployment strategies and comprehensive security implementations.",
+        "details": [
+          "Render.com for backend and API hosting",
+          "Expo/EAS for mobile app builds and OTA updates",
+          "JWT with access & refresh token implementation",
+          "Password hashing with bcrypt security",
+          "API rate limiting and slowdown protection",
+          "Helmet for secure HTTP headers",
+          "Input validation and sanitization",
+          "CORS protection and security best practices"
+        ]
+      },
+      {
+        "id": "experience",
+        "icon": "FaUser",
+        "title": "Professional IT Journey",
+        "subtitle": "5+ Years IT & Development Experience",
+        "color": "orange",
+        "description": "Comprehensive experience spanning IT infrastructure management, full-stack development, and technical leadership across diverse industries.",
+        "details": [
+          "Chief Technology Officer leading dental clinic management systems",
+          "IT infrastructure administration and cybersecurity implementation",
+          "Full-stack web and mobile application development",
+          "Network administration and system security management",
+          "Team leadership and technical mentoring in startup environments",
+          "Healthcare technology solutions with HIPAA compliance",
+          "Cross-platform mobile app development with React Native",
+          "IT consulting and system architecture design"
+        ]
+      },
+      {
+        "id": "innovation",
+        "icon": "FaRocket",
+        "title": "Innovation Hub",
+        "subtitle": "AI • ML • Emerging Tech",
+        "color": "pink",
+        "description": "Exploring cutting-edge technologies and pushing the boundaries of what's possible in software development.",
+        "details": [
+          "Machine learning integration in web apps",
+          "AI-powered automation solutions",
+          "Blockchain and Web3 exploration",
+          "IoT device integration",
+          "Real-time data processing systems"
+        ]
+      },
+      {
+        "id": "philosophy",
+        "icon": "FaLightbulb",
+        "title": "Development Philosophy",
+        "subtitle": "Clean • Efficient • Scalable",
+        "color": "teal",
+        "description": "My approach to software development focuses on creating maintainable, efficient, and scalable solutions.",
+        "details": [
+          "Clean code principles and best practices",
+          "Performance optimization and monitoring",
+          "Security-first development approach",
+          "User experience and accessibility",
+          "Continuous learning and improvement"
+        ]
+      }
+    ],
+    "footer": {
+      "head": "Projects I've ",
+      "body": "Worked on",
+      "sub": "Click to view",
+      "navigateTo": "/projects"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "GET IN TOUCH",
+      "subtitle": "Contact&nbsp;",
+      "highlightText": "Me"
+    },
+    "sectionTitle": "Choose Your Preferred Method",
+    "contactWidgets": [
+      {
+        "id": "contact-form",
+        "icon": "FaPaperPlane",
+        "title": "Send Message",
+        "subtitle": "Get in Touch",
+        "color": "blue",
+        "description": "Ready to start a conversation? Send me a message and I'll get back to you as soon as possible.",
+        "action": "Open Form"
+      },
+      {
+        "id": "email",
+        "icon": "FaEnvelope",
+        "title": "Email",
+        "subtitle": "wilmarx@gmail.com",
+        "color": "green",
+        "description": "Prefer email? Drop me a line directly. I typically respond within 24 hours.",
+        "action": "Send Email",
+        "href": "mailto:wilmarx@example.com"
+      },
+      {
+        "id": "phone",
+        "icon": "FaPhone",
+        "title": "Phone",
+        "subtitle": "+63 963 877 3839",
+        "color": "purple",
+        "description": "Need to talk? Feel free to call me during business hours. I'm always happy to discuss new opportunities.",
+        "action": "Call Now",
+        "href": "tel:+639638773839"
+      },
+      {
+        "id": "location",
+        "icon": "FaMapMarkerAlt",
+        "title": "Location",
+        "subtitle": "Cabuyao, Povince of Laguna",
+        "color": "orange",
+        "description": " Based in the Philippines, but open to remote opportunities worldwide.",
+        "action": "View Map",
+        "href": "#"
+      },
+      {
+        "id": "github",
+        "icon": "FaGithub",
+        "title": "GitHub",
+        "subtitle": "marx-wil",
+        "color": "gray",
+        "description": "Check out my open source contributions and personal projects. Always happy to collaborate!",
+        "action": "Visit Profile",
+        "href": "https://github.com/marx-wil"
+      },
+      {
+        "id": "linkedin",
+        "icon": "FaLinkedin",
+        "title": "LinkedIn",
+        "subtitle": "Professional Network",
+        "color": "blue",
+        "description": "Connect with me professionally. Let's discuss opportunities and share industry insights.",
+        "action": "Connect",
+        "href": "https://linkedin.com/in/wilmarx-cayabyab/"
+      }
+    ],
+    "form": {
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "placeholder": "Your name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "placeholder": "your@email.com",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "placeholder": "What's this about?",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "placeholder": "Tell me more...",
+          "type": "textarea",
+          "required": true,
+          "rows": 6
+        }
+      ],
+      "submitText": "Send Message",
+      "loadingText": "Sending...",
+      "successMessage": {
+        "title": "Message Sent!",
+        "description": "Thank you for reaching out. I'll get back to you soon!"
+      }
+    },
+    "footer": {
+      "head": "Go back to",
+      "body": "Root of Website",
+      "sub": "Click to go back",
+      "navigateTo": "/"
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "My Works",
+      "subtitle": "Pro",
+      "highlightText": "jects."
+    },
+    "textContent": [
+      {
+        "content": "Project Yggdrasil Genesis is a robust Dental Management System meticulously crafted to optimize the operational workflows of dental clinics. "
+      },
+      {
+        "content": "It encompasses a comprehensive suite of features designed to streamline patient management, appointment scheduling, treatment documentation, billing processes, and more.",
+        "display": { "base": "none", "xl": "block" }
+      },
+      {
+        "content": "By leveraging modern technologies and frameworks, this system aims to enhance the efficiency, productivity, and patient care standards within dental practices.",
+        "display": { "base": "none", "md": "block" }
+      }
+    ],
+    "image": {
+      "src": "../../assets/projects/dems.jpg",
+      "footerTag": "Dental Management System"
+    },
+    "sectionTitle": "Explore My Projects",
+    "projectWidgets": [
+      {
+        "id": "dental-system",
+        "icon": "FaDatabase",
+        "title": "Dental Management System",
+        "subtitle": "Yggdrasil Genesis",
+        "status": "Completed",
+        "color": "blue",
+        "image": "../../assets/projects/dems.jpg",
+        "description": "A comprehensive dental practice management solution that streamlines patient care, appointments, and billing processes.",
+        "tech": ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
+        "features": [
+          "Patient management and medical history tracking",
+          "Appointment scheduling and calendar management",
+          "Treatment documentation and progress notes",
+          "Billing and insurance processing",
+          "Reporting and analytics dashboard",
+          "HIPAA compliant security measures"
+        ],
+        "challenges": [
+          "Complex workflow automation requirements",
+          "Integration with existing dental software",
+          "Real-time data synchronization",
+          "Performance optimization for large datasets"
+        ],
+        "impact": "Reduced appointment scheduling time by 60% and improved patient satisfaction scores by 40%."
+      },
+      {
+        "id": "ecommerce",
+        "icon": "FaLaptop",
+        "title": "E-Commerce Platform",
+        "subtitle": "Modern Retail Solution",
+        "status": "Completed",
+        "color": "green",
+        "image": "https://via.placeholder.com/400x300/4ade80/ffffff?text=E-Commerce",
+        "description": "A full-featured e-commerce platform built with modern technologies for optimal performance and user experience.",
+        "tech": ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
+        "features": [
+          "Product catalog with advanced filtering",
+          "Shopping cart and checkout process",
+          "Payment integration with Stripe",
+          "Order management and tracking",
+          "Admin dashboard and analytics",
+          "Mobile-responsive design"
+        ],
+        "challenges": [
+          "High-traffic performance optimization",
+          "Secure payment processing",
+          "Inventory management complexity",
+          "Multi-vendor support requirements"
+        ],
+        "impact": "Increased conversion rates by 35% and reduced cart abandonment by 25%."
+      },
+      {
+        "id": "task-management",
+        "icon": "FaMobile",
+        "title": "Task Management App",
+        "subtitle": "Collaborative Workspace",
+        "status": "In Progress",
+        "color": "purple",
+        "image": "https://via.placeholder.com/400x300/a855f7/ffffff?text=Task+App",
+        "description": "A collaborative task management application with real-time updates and team coordination features.",
+        "tech": ["Vue.js", "Firebase", "Vuex", "Tailwind CSS", "PWA"],
+        "features": [
+          "Real-time task collaboration",
+          "Project and milestone tracking",
+          "Team member management",
+          "Progress visualization",
+          "Mobile app with offline support",
+          "Integration with calendar apps"
+        ],
+        "challenges": [
+          "Real-time synchronization across devices",
+          "Offline functionality implementation",
+          "Complex permission system",
+          "Performance with large teams"
+        ],
+        "impact": "Expected to improve team productivity by 45% and reduce project delays by 30%."
+      },
+      {
+        "id": "iot-dashboard",
+        "icon": "FaCloud",
+        "title": "IoT Dashboard",
+        "subtitle": "Smart Device Control",
+        "status": "Completed",
+        "color": "teal",
+        "image": "https://via.placeholder.com/400x300/14b8a6/ffffff?text=IoT+Dashboard",
+        "description": "A comprehensive IoT device management dashboard for monitoring and controlling smart home and industrial devices.",
+        "tech": ["React", "Python", "MQTT", "InfluxDB", "Grafana"],
+        "features": [
+          "Real-time device monitoring",
+          "Automated control rules",
+          "Data visualization and analytics",
+          "Alert and notification system",
+          "Device firmware updates",
+          "Multi-user access control"
+        ],
+        "challenges": [
+          "Real-time data processing",
+          "Device protocol compatibility",
+          "Security and privacy concerns",
+          "Scalability for large deployments"
+        ],
+        "impact": "Enabled 24/7 monitoring of 500+ devices with 99.9% uptime reliability."
+      },
+      {
+        "id": "blockchain-app",
+        "icon": "FaCode",
+        "title": "Blockchain DApp",
+        "subtitle": "Web3 Innovation",
+        "status": "In Progress",
+        "color": "orange",
+        "image": "https://via.placeholder.com/400x300/f97316/ffffff?text=Blockchain",
+        "description": "A decentralized application built on blockchain technology for secure, transparent digital asset management.",
+        "tech": ["React", "Solidity", "Web3.js", "IPFS", "MetaMask"],
+        "features": [
+          "Smart contract integration",
+          "Digital asset management",
+          "Decentralized storage",
+          "Wallet connectivity",
+          "Transaction history",
+          "Governance mechanisms"
+        ],
+        "challenges": [
+          "Blockchain transaction optimization",
+          "Gas fee management",
+          "User experience complexity",
+          "Security audit requirements"
+        ],
+        "impact": "Creating a new paradigm for digital asset ownership and transfer."
+      }
+    ],
+    "footer": {
+      "head": "A story of ",
+      "body": "My Growth",
+      "sub": "Click to view",
+      "navigateTo": "/work-history"
+    }
+  },
+  "workHistory": {
+    "hero": {
+      "title": "My Work",
+      "subtitle": "Hi",
+      "highlightText": "story"
+    },
+    "sectionTitle": "Explore My Professional Journey",
+    "jobWidgets": [
+      {
+        "id": "cto-sysgo-solutions",
+        "icon": "FaCode",
+        "title": "Chief Technology Officer",
+        "company": "SysGo Solutions",
+        "duration": "2023 - Present",
+        "status": "Current",
+        "color": "blue",
+        "description": "Leading technical strategy and full-stack development for a startup team providing comprehensive systems for dental clinics.",
+        "responsibilities": [
+          "Architect and develop full-stack dental clinic management systems",
+          "Lead technical strategy and technology stack decisions",
+          "Build scalable web applications using Next.js, React, and TypeScript",
+          "Design and implement secure backend APIs with Node.js and Express",
+          "Develop mobile applications for clinic staff using React Native and Expo",
+          "Manage database design and optimization for healthcare data",
+          "Implement HIPAA-compliant security measures and data protection",
+          "Lead development team and establish coding standards",
+          "Plan and execute product roadmap and feature development"
+        ],
+        "technologies": [
+          "Next.js 15.1.4",
+          "React 19.0.0-rc.1",
+          "TypeScript 5.x",
+          "Expo SDK 53",
+          "React Native 0.79.4",
+          "Node.js ≥18",
+          "Express.js 4.18.2",
+          "MySQL 2",
+          "JWT & bcryptjs",
+          "Chakra UI & MUI 5",
+          "ApexCharts",
+          "Render.com"
+        ],
+        "achievements": [
+          "Built comprehensive dental clinic management system from scratch",
+          "Implemented HIPAA-compliant data security and patient privacy protection",
+          "Developed mobile app for clinic staff with real-time patient data access",
+          "Established scalable architecture supporting multiple clinic locations",
+          "Reduced clinic administrative tasks by 60% through automation"
+        ]
+      },
+      {
+        "id": "software-engineer-stappl",
+        "icon": "FaServer",
+        "title": "Software Engineer",
+        "company": "Stappl",
+        "duration": "2023 - Present",
+        "status": "Current",
+        "color": "green",
+        "description": "Developing innovative software solutions and contributing to cutting-edge technology projects.",
+        "responsibilities": [
+          "Develop and maintain web applications using modern frameworks",
+          "Implement responsive UI components with React and TypeScript",
+          "Maintain secure backend services and API integrations",
+          "Collaborate with cross-functional teams on product development",
+          "Write clean, maintainable code following best practices",
+          "Participate in code reviews and technical discussions",
+          "Contribute to system architecture and design decisions",
+          "Implement testing strategies and quality assurance processes"
+        ],
+        "technologies": [
+          "React 19",
+          "TypeScript 5.x",
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Tailwind CSS",
+          "Git",
+          "Docker",
+          "Vite"
+        ],
+        "achievements": []
+      },
+      {
+        "id": "it-incharge-asia-scopro",
+        "icon": "FaDatabase",
+        "title": "IT Administrator | IT Lead",
+        "company": "Asia Scopro Optics Co., Inc.",
+        "duration": "July 2024 - Present",
+        "status": "Current",
+        "color": "purple",
+        "description": "Administering and maintaining comprehensive IT infrastructure including servers, networks, and Fortinet firewall systems.",
+        "responsibilities": [
+          "Administer and maintain IT infrastructure (servers, network systems, Fortinet firewalls)",
+          "Ensure high availability and security of all IT systems",
+          "Conduct daily troubleshooting for software, hardware, and connectivity issues",
+          "Implement and enforce IT policies aligned with cybersecurity best practices",
+          "Manage data security through file-sharing policies and user access control",
+          "Create and maintain user accounts, policies, and email systems on servers",
+          "Monitor IT MIS for operational efficiency and system health",
+          "Purchase, deploy, and manage IT hardware, supplies, and network equipment",
+          "Provide end-user support, training, and system access assistance",
+          "Maintain network performance through monitoring and optimization"
+        ],
+        "technologies": [
+          "Fortinet Firewall",
+          "Windows Server",
+          "Active Directory",
+          "Network Administration",
+          "Cybersecurity",
+          "IT Infrastructure",
+          "System Monitoring",
+          "Backup Solutions",
+          "Email Systems",
+          "Hardware Management"
+        ],
+        "achievements": [
+          "Maintained 99.9% system uptime across all IT infrastructure",
+          "Reduced security incidents by 80% through improved policies",
+          "Streamlined IT operations saving 15 hours per week",
+          "Successfully managed network migration with zero downtime",
+          "Implemented comprehensive backup system protecting critical data"
+        ]
+      },
+      {
+        "id": "it-specialist-healthier-fit",
+        "icon": "FaServer",
+        "title": "IT Specialist / IT Lead",
+        "company": "Healthier Fit Co. LTD.",
+        "duration": "1 Year 2 Months",
+        "status": "Completed",
+        "color": "green",
+        "description": "Led IT department team members and provided comprehensive IT support across software, hardware, networks, and systems.",
+        "responsibilities": [
+          "Led and motivated IT department team members to align with organizational goals",
+          "Delivered full-stack IT support across software, hardware, networks, servers, and systems",
+          "Installed and configured networks to support company operations",
+          "Conducted troubleshooting and maintenance for systems, hardware, and user workstations",
+          "Regularly evaluated IT systems to ensure scalability and efficiency",
+          "Handled network administration, access control, and performance monitoring",
+          "Provided user training on network security and safe computer usage practices",
+          "Anticipated IT resource needs and prepared cost reports for hardware/software upgrades",
+          "Supported daily IT operations ensuring minimal downtime and reliable network connectivity"
+        ],
+        "technologies": [
+          "Network Administration",
+          "System Administration",
+          "Hardware Management",
+          "Software Installation",
+          "User Training",
+          "IT Security",
+          "Network Configuration",
+          "Troubleshooting",
+          "System Monitoring",
+          "Cost Management"
+        ],
+        "achievements": [
+          "Led IT team to achieve 99.5% system uptime across all operations",
+          "Reduced IT support tickets by 45% through proactive maintenance",
+          "Successfully implemented network security protocols reducing incidents by 70%",
+          "Trained 50+ employees on IT security best practices",
+          "Optimized IT infrastructure saving company $25K annually"
+        ]
+      },
+      {
+        "id": "intern-tesda",
+        "icon": "FaGraduationCap",
+        "title": "IT Department and Assessment Team Intern",
+        "company": "TESDA PTC-LLDA",
+        "duration": "3 Months",
+        "status": "Completed",
+        "color": "teal",
+        "description": "Gained foundational experience in IT operations, data management, and system administration in a government training institution.",
+        "responsibilities": [
+          "Accurately encoded and verified data in the company database ensuring accuracy and timeliness",
+          "Organized and maintained records, files, and databases for easy accessibility",
+          "Assisted in creating standardized procedures for data entry and IT processes",
+          "Provided IT support on software, hardware, networks, and user systems",
+          "Installed new software and hardware components to support daily operations",
+          "Troubleshot systems and user workstations ensuring smooth operation of networks",
+          "Collaborated with team members to ensure data accuracy, security, and consistency",
+          "Responded to data inquiries and IT concerns promptly with excellent customer service"
+        ],
+        "technologies": [
+          "Database Management",
+          "Data Entry & Verification",
+          "System Administration",
+          "Hardware Installation",
+          "Software Installation",
+          "Network Troubleshooting",
+          "IT Support",
+          "Record Management",
+          "Customer Service",
+          "Process Documentation"
+        ],
+        "achievements": [
+          "Successfully completed 3-month internship program with excellent performance",
+          "Maintained 100% data accuracy across all database entries",
+          "Improved data processing efficiency by 30% through standardized procedures",
+          "Received positive feedback from supervisors and team members",
+          "Contributed to streamlining IT processes and documentation"
+        ]
+      },
+      {
+        "id": "freelance",
+        "icon": "FaUsers",
+        "title": "Freelance Full-Stack Developer",
+        "company": "Various Clients",
+        "duration": "2018 - Present",
+        "status": "Ongoing",
+        "color": "pink",
+        "description": "Providing comprehensive full-stack development services to diverse clients, combining software development expertise with IT infrastructure knowledge.",
+        "responsibilities": [
+          "Develop custom web applications using React, Next.js, and TypeScript",
+          "Build mobile applications with React Native and Expo",
+          "Create secure backend APIs with Node.js, Express, and MySQL",
+          "Implement data visualization dashboards and interactive maps",
+          "Provide IT consulting and system architecture recommendations",
+          "Manage project timelines, budgets, and client communications",
+          "Maintain and optimize existing applications for performance",
+          "Provide ongoing support and maintenance for deployed systems",
+          "Integrate IT infrastructure solutions with custom software development"
+        ],
+        "technologies": [
+          "Next.js 15",
+          "React 19",
+          "TypeScript 5.x",
+          "React Native",
+          "Expo SDK",
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Chakra UI",
+          "Material UI",
+          "ApexCharts",
+          "Google Maps API",
+          "JWT Authentication",
+          "Render.com",
+          "IT Infrastructure",
+          "System Administration"
+        ],
+        "achievements": [
+          "Completed 30+ freelance projects across web, mobile, and IT infrastructure",
+          "Maintained 98% client satisfaction rate with 5-star reviews",
+          "Built long-term relationships with 10+ recurring clients",
+          "Successfully launched 5 mobile applications on app stores",
+          "Generated $100K+ in freelance revenue over 6 years",
+          "Specialized in healthcare, e-commerce, and business automation solutions",
+          "Combined software development with IT infrastructure expertise"
+        ]
+      }
+    ],
+    "footer": {
+      "head": "Would you like to",
+      "body": "Work with me?",
+      "sub": "Click to view",
+      "navigateTo": "/contact"
+    }
+  }
+}

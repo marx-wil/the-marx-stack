@@ -26,6 +26,7 @@ import HeroSection from "../../components/heroSection";
 import { useState } from "react";
 import GSAPModal from "../../components/gsapModal";
 import HeroHeader from "../../components/HeroHeader";
+import pagesConfig from "../../data/pagesConfig.json";
 
 const ContactContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -38,6 +39,7 @@ const ContactContent = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
+  const config = pagesConfig.contact;
 
   const textColor = useColorModeValue("gray.600", "gray.400");
   const accentColor = useColorModeValue("blue.500", "blue.400");
@@ -60,8 +62,8 @@ const ContactContent = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: config.form.successMessage.title,
+        description: config.form.successMessage.description,
         status: "success",
         duration: 5000,
         isClosable: true,
@@ -71,73 +73,20 @@ const ContactContent = () => {
     }, 2000);
   };
 
-  const contactWidgets = [
-    {
-      id: "contact-form",
-      icon: FaPaperPlane,
-      title: "Send Message",
-      subtitle: "Get in Touch",
-      color: "blue",
-      description:
-        "Ready to start a conversation? Send me a message and I'll get back to you as soon as possible.",
-      action: "Open Form",
-    },
-    {
-      id: "email",
-      icon: FaEnvelope,
-      title: "Email",
-      subtitle: "wilmarx@gmail.com",
-      color: "green",
-      description:
-        "Prefer email? Drop me a line directly. I typically respond within 24 hours.",
-      action: "Send Email",
-      href: "mailto:wilmarx@example.com",
-    },
-    {
-      id: "phone",
-      icon: FaPhone,
-      title: "Phone",
-      subtitle: "+63 963 877 3839",
-      color: "purple",
-      description:
-        "Need to talk? Feel free to call me during business hours. I'm always happy to discuss new opportunities.",
-      action: "Call Now",
-      href: "tel:+639638773839",
-    },
-    {
-      id: "location",
-      icon: FaMapMarkerAlt,
-      title: "Location",
-      subtitle: "Cabuyao, Povince of Laguna",
-      color: "orange",
-      description:
-        " Based in the Philippines, but open to remote opportunities worldwide.",
-      action: "View Map",
-      href: "#",
-    },
-    {
-      id: "github",
-      icon: FaGithub,
-      title: "GitHub",
-      subtitle: "marx-wil",
-      color: "gray",
-      description:
-        "Check out my open source contributions and personal projects. Always happy to collaborate!",
-      action: "Visit Profile",
-      href: "https://github.com/marx-wil",
-    },
-    {
-      id: "linkedin",
-      icon: FaLinkedin,
-      title: "LinkedIn",
-      subtitle: "Professional Network",
-      color: "blue",
-      description:
-        "Connect with me professionally. Let's discuss opportunities and share industry insights.",
-      action: "Connect",
-      href: "https://linkedin.com/in/wilmarx-cayabyab/",
-    },
-  ];
+  // Icon mapping for dynamic icon loading
+  const iconMap = {
+    FaEnvelope,
+    FaPhone,
+    FaMapMarkerAlt,
+    FaPaperPlane,
+    FaGithub,
+    FaLinkedin,
+  };
+
+  const contactWidgets = config.contactWidgets.map(widget => ({
+    ...widget,
+    icon: iconMap[widget.icon]
+  }));
 
   const handleWidgetClick = (widgetId) => {
     setActiveModal(widgetId);
@@ -184,102 +133,82 @@ const ContactContent = () => {
                 gap={4}
                 w="full"
               >
-                <FormControl isRequired>
-                  <FormLabel color={textColor} className="poppins">
-                    Name
-                  </FormLabel>
-                  <Input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Your name"
-                    borderRadius="lg"
-                    borderColor={borderColor}
-                    _focus={{
-                      borderColor: accentColor,
-                      boxShadow: `0 0 0 1px ${accentColor}`,
-                    }}
-                    _hover={{
-                      borderColor: accentColor,
-                    }}
-                    transition="all 0.2s ease"
-                  />
-                </FormControl>
-
-                <FormControl isRequired>
-                  <FormLabel color={textColor} className="poppins">
-                    Email
-                  </FormLabel>
-                  <Input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="your@email.com"
-                    borderRadius="lg"
-                    borderColor={borderColor}
-                    _focus={{
-                      borderColor: accentColor,
-                      boxShadow: `0 0 0 1px ${accentColor}`,
-                    }}
-                    _hover={{
-                      borderColor: accentColor,
-                    }}
-                    transition="all 0.2s ease"
-                  />
-                </FormControl>
+                {config.form.fields.slice(0, 2).map((field) => (
+                  <FormControl key={field.name} isRequired={field.required}>
+                    <FormLabel color={textColor} className="poppins">
+                      {field.label}
+                    </FormLabel>
+                    <Input
+                      name={field.name}
+                      type={field.type}
+                      value={formData[field.name]}
+                      onChange={handleInputChange}
+                      placeholder={field.placeholder}
+                      borderRadius="lg"
+                      borderColor={borderColor}
+                      _focus={{
+                        borderColor: accentColor,
+                        boxShadow: `0 0 0 1px ${accentColor}`,
+                      }}
+                      _hover={{
+                        borderColor: accentColor,
+                      }}
+                      transition="all 0.2s ease"
+                    />
+                  </FormControl>
+                ))}
               </Grid>
 
-              <FormControl isRequired>
-                <FormLabel color={textColor} className="poppins">
-                  Subject
-                </FormLabel>
-                <Input
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  placeholder="What's this about?"
-                  borderRadius="lg"
-                  borderColor={borderColor}
-                  _focus={{
-                    borderColor: accentColor,
-                    boxShadow: `0 0 0 1px ${accentColor}`,
-                  }}
-                  _hover={{
-                    borderColor: accentColor,
-                  }}
-                  transition="all 0.2s ease"
-                />
-              </FormControl>
-
-              <FormControl isRequired>
-                <FormLabel color={textColor} className="poppins">
-                  Message
-                </FormLabel>
-                <Textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Tell me more..."
-                  rows={6}
-                  borderRadius="lg"
-                  borderColor={borderColor}
-                  resize="vertical"
-                  _focus={{
-                    borderColor: accentColor,
-                    boxShadow: `0 0 0 1px ${accentColor}`,
-                  }}
-                  _hover={{
-                    borderColor: accentColor,
-                  }}
-                  transition="all 0.2s ease"
-                />
-              </FormControl>
+              {config.form.fields.slice(2).map((field) => (
+                <FormControl key={field.name} isRequired={field.required}>
+                  <FormLabel color={textColor} className="poppins">
+                    {field.label}
+                  </FormLabel>
+                  {field.type === "textarea" ? (
+                    <Textarea
+                      name={field.name}
+                      value={formData[field.name]}
+                      onChange={handleInputChange}
+                      placeholder={field.placeholder}
+                      rows={field.rows}
+                      borderRadius="lg"
+                      borderColor={borderColor}
+                      resize="vertical"
+                      _focus={{
+                        borderColor: accentColor,
+                        boxShadow: `0 0 0 1px ${accentColor}`,
+                      }}
+                      _hover={{
+                        borderColor: accentColor,
+                      }}
+                      transition="all 0.2s ease"
+                    />
+                  ) : (
+                    <Input
+                      name={field.name}
+                      type={field.type}
+                      value={formData[field.name]}
+                      onChange={handleInputChange}
+                      placeholder={field.placeholder}
+                      borderRadius="lg"
+                      borderColor={borderColor}
+                      _focus={{
+                        borderColor: accentColor,
+                        boxShadow: `0 0 0 1px ${accentColor}`,
+                      }}
+                      _hover={{
+                        borderColor: accentColor,
+                      }}
+                      transition="all 0.2s ease"
+                    />
+                  )}
+                </FormControl>
+              ))}
 
               <Button
                 type="submit"
                 isLoading={isSubmitting}
-                loadingText="Sending..."
+                loadingText={config.form.loadingText}
                 rightIcon={<FaPaperPlane />}
                 colorScheme="blue"
                 size="lg"
@@ -296,7 +225,7 @@ const ContactContent = () => {
                 className="poppins"
                 fontWeight="semibold"
               >
-                Send Message
+                {config.form.submitText}
               </Button>
             </VStack>
           </form>
@@ -373,9 +302,9 @@ const ContactContent = () => {
     >
       <VStack align="flex-start" spacing={4}>
         <HeroHeader
-          title="GET IN TOUCH"
-          subtitle="Contact&nbsp;"
-          highlightText="Me"
+          title={config.hero.title}
+          subtitle={config.hero.subtitle}
+          highlightText={config.hero.highlightText}
         />
       </VStack>
 
@@ -388,7 +317,7 @@ const ContactContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Choose Your Preferred Method
+          {config.sectionTitle}
         </Text>
 
         <Grid
@@ -511,12 +440,13 @@ const ContactContent = () => {
 const HeroWithContent = HeroSection(ContactContent);
 
 const Contact = () => {
+  const config = pagesConfig.contact;
   return (
     <HeroWithContent
-      footerHead="Go back to"
-      footerBody="Root of Website"
-      footerSub="Click to go back"
-      navigateTo="/"
+      footerHead={config.footer.head}
+      footerBody={config.footer.body}
+      footerSub={config.footer.sub}
+      navigateTo={config.footer.navigateTo}
     />
   );
 };

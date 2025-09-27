@@ -2,10 +2,12 @@ import { Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import HeroSection from "../../components/heroSection";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import pagesConfig from "../../data/pagesConfig.json";
 
 const HeroContent = () => {
   const typingTextRef = useRef(null);
   const cursorRef = useRef(null);
+  const config = pagesConfig.default;
 
   useEffect(() => {
     const typingText = typingTextRef.current;
@@ -13,11 +15,11 @@ const HeroContent = () => {
 
     if (!typingText || !cursor) return;
 
-    const words = ["developer.", "designer.", "technologist."];
+    const words = config.hero.typingWords;
     let currentWordIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 100;
+    let typingSpeed = config.hero.typingSpeed;
 
     const type = () => {
       const currentWord = words[currentWordIndex];
@@ -25,20 +27,20 @@ const HeroContent = () => {
       if (isDeleting) {
         typingText.textContent = currentWord.substring(0, currentCharIndex - 1);
         currentCharIndex--;
-        typingSpeed = 50;
+        typingSpeed = config.hero.deletingSpeed;
       } else {
         typingText.textContent = currentWord.substring(0, currentCharIndex + 1);
         currentCharIndex++;
-        typingSpeed = 100;
+        typingSpeed = config.hero.typingSpeed;
       }
 
       if (!isDeleting && currentCharIndex === currentWord.length) {
-        typingSpeed = 1500;
+        typingSpeed = config.hero.pauseSpeed;
         isDeleting = true;
       } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
         currentWordIndex = (currentWordIndex + 1) % words.length;
-        typingSpeed = 500;
+        typingSpeed = config.hero.wordPauseSpeed;
       }
 
       setTimeout(type, typingSpeed);
@@ -55,7 +57,7 @@ const HeroContent = () => {
     });
 
     return () => {};
-  }, []);
+  }, [config]);
 
   return (
     <VStack align="flex-start" spacing={4} justify="center" h="full">
@@ -70,7 +72,7 @@ const HeroContent = () => {
         textTransform="uppercase"
         opacity={0.9}
       >
-        Wilmarx John
+        {config.hero.name}
       </Text>
       <Text
         fontSize={{ base: "5xl", md: "7xl", lg: "8xl" }}
@@ -103,12 +105,13 @@ const HeroContent = () => {
 const HeroWithContent = HeroSection(HeroContent);
 
 const Default = () => {
+  const config = pagesConfig.default;
   return (
     <HeroWithContent
-      footerHead="Learn more"
-      footerBody="About me"
-      footerSub="Click to view"
-      navigateTo="/about"
+      footerHead={config.footer.head}
+      footerBody={config.footer.body}
+      footerSub={config.footer.sub}
+      navigateTo={config.footer.navigateTo}
     />
   );
 };

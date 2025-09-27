@@ -27,207 +27,35 @@ import DentalManagementSystem from "../../assets/projects/dems.jpg";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
 import { useState } from "react";
+import pagesConfig from "../../data/pagesConfig.json";
 
 const ProjectsContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeModal, setActiveModal] = useState(null);
+  const config = pagesConfig.projects;
 
   const textColor = useColorModeValue("gray.600", "gray.400");
   const cardBg = useColorModeValue("white", "gray.800");
   const cardBorderColor = useColorModeValue("gray.200", "gray.700");
   const projectTextColor = useColorModeValue("gray.800", "gray.200");
 
-  const textContent = [
-    {
-      content:
-        "Project Yggdrasil Genesis is a robust Dental Management System meticulously crafted to optimize the operational workflows of dental clinics. ",
-    },
-    {
-      content:
-        "It encompasses a comprehensive suite of features designed to streamline patient management, appointment scheduling, treatment documentation, billing processes, and more.",
-      display: { base: "none", xl: "block" },
-    },
-    {
-      content:
-        "By leveraging modern technologies and frameworks, this system aims to enhance the efficiency, productivity, and patient care standards within dental practices.",
-      display: { base: "none", md: "block" },
-    },
-  ];
+  const textContent = config.textContent;
 
-  const projectWidgets = [
-    {
-      id: "dental-system",
-      icon: FaDatabase,
-      title: "Dental Management System",
-      subtitle: "Yggdrasil Genesis",
-      status: "Completed",
-      color: "blue",
-      image: DentalManagementSystem,
-      description:
-        "A comprehensive dental practice management solution that streamlines patient care, appointments, and billing processes.",
-      tech: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
-      features: [
-        "Patient management and medical history tracking",
-        "Appointment scheduling and calendar management",
-        "Treatment documentation and progress notes",
-        "Billing and insurance processing",
-        "Reporting and analytics dashboard",
-        "HIPAA compliant security measures",
-      ],
-      challenges: [
-        "Complex workflow automation requirements",
-        "Integration with existing dental software",
-        "Real-time data synchronization",
-        "Performance optimization for large datasets",
-      ],
-      impact:
-        "Reduced appointment scheduling time by 60% and improved patient satisfaction scores by 40%.",
-    },
-    {
-      id: "ecommerce",
-      icon: FaLaptop,
-      title: "E-Commerce Platform",
-      subtitle: "Modern Retail Solution",
-      status: "Completed",
-      color: "green",
-      image:
-        "https://via.placeholder.com/400x300/4ade80/ffffff?text=E-Commerce",
-      description:
-        "A full-featured e-commerce platform built with modern technologies for optimal performance and user experience.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
-      features: [
-        "Product catalog with advanced filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order management and tracking",
-        "Admin dashboard and analytics",
-        "Mobile-responsive design",
-      ],
-      challenges: [
-        "High-traffic performance optimization",
-        "Secure payment processing",
-        "Inventory management complexity",
-        "Multi-vendor support requirements",
-      ],
-      impact:
-        "Increased conversion rates by 35% and reduced cart abandonment by 25%.",
-    },
-    {
-      id: "task-management",
-      icon: FaMobile,
-      title: "Task Management App",
-      subtitle: "Collaborative Workspace",
-      status: "In Progress",
-      color: "purple",
-      image: "https://via.placeholder.com/400x300/a855f7/ffffff?text=Task+App",
-      description:
-        "A collaborative task management application with real-time updates and team coordination features.",
-      tech: ["Vue.js", "Firebase", "Vuex", "Tailwind CSS", "PWA"],
-      features: [
-        "Real-time task collaboration",
-        "Project and milestone tracking",
-        "Team member management",
-        "Progress visualization",
-        "Mobile app with offline support",
-        "Integration with calendar apps",
-      ],
-      challenges: [
-        "Real-time synchronization across devices",
-        "Offline functionality implementation",
-        "Complex permission system",
-        "Performance with large teams",
-      ],
-      impact:
-        "Expected to improve team productivity by 45% and reduce project delays by 30%.",
-    },
-    {
-      id: "ai-platform",
-      icon: FaRocket,
-      title: "AI Content Platform",
-      subtitle: "Next-Gen Creation",
-      status: "Planning",
-      color: "pink",
-      image:
-        "https://via.placeholder.com/400x300/ec4899/ffffff?text=AI+Platform",
-      description:
-        "An AI-powered content creation platform that helps users generate high-quality written content and creative assets.",
-      tech: ["Next.js", "Python", "OpenAI API", "PostgreSQL", "Docker"],
-      features: [
-        "AI-powered content generation",
-        "Multiple content types support",
-        "Brand voice customization",
-        "Collaboration tools",
-        "Analytics and insights",
-        "API for third-party integration",
-      ],
-      challenges: [
-        "AI model integration and optimization",
-        "Content quality assurance",
-        "Scalability for high usage",
-        "Ethical AI implementation",
-      ],
-      impact:
-        "Projected to reduce content creation time by 70% while maintaining quality standards.",
-    },
-    {
-      id: "iot-dashboard",
-      icon: FaCloud,
-      title: "IoT Dashboard",
-      subtitle: "Smart Device Control",
-      status: "Completed",
-      color: "teal",
-      image:
-        "https://via.placeholder.com/400x300/14b8a6/ffffff?text=IoT+Dashboard",
-      description:
-        "A comprehensive IoT device management dashboard for monitoring and controlling smart home and industrial devices.",
-      tech: ["React", "Python", "MQTT", "InfluxDB", "Grafana"],
-      features: [
-        "Real-time device monitoring",
-        "Automated control rules",
-        "Data visualization and analytics",
-        "Alert and notification system",
-        "Device firmware updates",
-        "Multi-user access control",
-      ],
-      challenges: [
-        "Real-time data processing",
-        "Device protocol compatibility",
-        "Security and privacy concerns",
-        "Scalability for large deployments",
-      ],
-      impact:
-        "Enabled 24/7 monitoring of 500+ devices with 99.9% uptime reliability.",
-    },
-    {
-      id: "blockchain-app",
-      icon: FaCode,
-      title: "Blockchain DApp",
-      subtitle: "Web3 Innovation",
-      status: "In Progress",
-      color: "orange",
-      image:
-        "https://via.placeholder.com/400x300/f97316/ffffff?text=Blockchain",
-      description:
-        "A decentralized application built on blockchain technology for secure, transparent digital asset management.",
-      tech: ["React", "Solidity", "Web3.js", "IPFS", "MetaMask"],
-      features: [
-        "Smart contract integration",
-        "Digital asset management",
-        "Decentralized storage",
-        "Wallet connectivity",
-        "Transaction history",
-        "Governance mechanisms",
-      ],
-      challenges: [
-        "Blockchain transaction optimization",
-        "Gas fee management",
-        "User experience complexity",
-        "Security audit requirements",
-      ],
-      impact:
-        "Creating a new paradigm for digital asset ownership and transfer.",
-    },
-  ];
+  // Icon mapping for dynamic icon loading
+  const iconMap = {
+    FaCode,
+    FaRocket,
+    FaLaptop,
+    FaMobile,
+    FaDatabase,
+    FaCloud,
+  };
+
+  const projectWidgets = config.projectWidgets.map(project => ({
+    ...project,
+    icon: iconMap[project.icon],
+    image: project.image === "../../assets/projects/dems.jpg" ? DentalManagementSystem : project.image
+  }));
 
   const handleWidgetClick = (widgetId) => {
     setActiveModal(widgetId);
@@ -435,14 +263,18 @@ const ProjectsContent = () => {
         alignItems="center"
       >
         <GridItem>
-          <HeroHeader title="My Works" subtitle="Pro" highlightText="jects." />
+          <HeroHeader 
+            title={config.hero.title} 
+            subtitle={config.hero.subtitle} 
+            highlightText={config.hero.highlightText} 
+          />
         </GridItem>
 
         <GridItem alignSelf="center" position="relative">
           <TextWithImage
             textContent={textContent}
             imageSrc={DentalManagementSystem}
-            footerTag="Dental Management System"
+            footerTag={config.image.footerTag}
           />
         </GridItem>
       </Grid>
@@ -456,7 +288,7 @@ const ProjectsContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Explore My Projects
+          {config.sectionTitle}
         </Text>
 
         <Grid
@@ -598,12 +430,13 @@ const ProjectsContent = () => {
 const HeroWithContent = HeroSection(ProjectsContent);
 
 const Projects = () => {
+  const config = pagesConfig.projects;
   return (
     <HeroWithContent
-      footerHead="A story of "
-      footerBody="My Growth"
-      footerSub="Click to view"
-      navigateTo="/work-history"
+      footerHead={config.footer.head}
+      footerBody={config.footer.body}
+      footerSub={config.footer.sub}
+      navigateTo={config.footer.navigateTo}
     />
   );
 };

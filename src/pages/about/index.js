@@ -27,218 +27,37 @@ import dev_avatar from "../../assets/me/myphoto.jpg";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
 import { useState } from "react";
+import pagesConfig from "../../data/pagesConfig.json";
 
 const AboutContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeModal, setActiveModal] = useState(null);
+  const config = pagesConfig.about;
 
   const textColor = useColorModeValue("gray.600", "gray.400");
   const cardBg = useColorModeValue("white", "gray.800");
   const cardBorderColor = useColorModeValue("gray.200", "gray.700");
   const skillTextColor = useColorModeValue("gray.800", "gray.200");
 
-  const textContent = [
-    {
-      content:
-        "Hi, I'm Wilmarx — a systems developer and tech enthusiast with a lifelong curiosity for how things work beneath the surface. That fascination with the inner workings of technology led me into the world of IT and systems development, where I get to turn that passion into purposeful work.",
-    },
-    {
-      content:
-        "As an IT professional, I help design and maintain systems that keep operations running smoothly and securely. Whether configuring servers, managing backend logic, or troubleshooting issues, I enjoy building tools that are efficient, reliable, and impactful.",
-      display: { base: "none", xl: "block" },
-    },
-    {
-      content:
-        "I'm also growing as a systems developer, diving into frontend and backend technologies to craft seamless digital experiences. I'm always eager to learn and adapt — because in tech, there's always something new to explore and improve.",
-      display: { base: "none", md: "block" },
-    },
-  ];
+  const textContent = config.textContent;
 
-  const interactiveWidgets = [
-    {
-      id: "frontend",
-      icon: FaCode,
-      title: "Frontend Excellence",
-      subtitle: "Next.js 15 • React 19 • TypeScript 5.x",
-      color: "blue",
-      description:
-        "Crafting modern, responsive web applications with cutting-edge frameworks and UI libraries.",
-      details: [
-        "Next.js 15.1.4 with App Router and Server Components",
-        "React 19.0.0-rc.1 with latest features and optimizations",
-        "TypeScript 4.9.4/5.x for type-safe development",
-        "Chakra UI and Material UI (MUI 5) for component libraries",
-        "Refine.dev for rapid admin panel development",
-        "Emotion and NativeWind for styling solutions",
-        "Framer Motion for smooth animations",
-        "React Router v6 and Expo Router for navigation",
-        "React Hook Form for efficient form handling",
-      ],
-    },
-    {
-      id: "mobile",
-      icon: FaRocket,
-      title: "Mobile Development",
-      subtitle: "Expo SDK 53 • React Native 0.79.4",
-      color: "cyan",
-      description:
-        "Building cross-platform mobile applications with React Native and Expo ecosystem.",
-      details: [
-        "Expo SDK 53 with latest native modules and APIs",
-        "React Native 0.79.4 with React 19.0.0 support",
-        "React Navigation 7.x for seamless navigation",
-        "Expo modules: Blur, Constants, Font, Haptics, Image",
-        "Expo Linking, Splash Screen, Status Bar, Symbols",
-        "NativeWind for Tailwind CSS in React Native",
-        "Expo Vector Icons for comprehensive icon sets",
-        "System UI and Web Browser integrations",
-      ],
-    },
-    {
-      id: "backend",
-      icon: FaServer,
-      title: "Backend Engineering",
-      subtitle: "Node.js ≥18 • Express.js 4.18.2 • TypeScript",
-      color: "green",
-      description:
-        "Building secure, scalable server-side applications with modern Node.js ecosystem.",
-      details: [
-        "Node.js (≥18) with Express.js 4.18.2 framework",
-        "TypeScript for type-safe backend development",
-        "MySQL 2 (mysql2) for robust database operations",
-        "JWT authentication with access & refresh tokens",
-        "bcryptjs for secure password hashing",
-        "Helmet for security headers and CORS protection",
-        "Express Validator for input validation",
-        "Express Rate Limit and Express Slow Down for API protection",
-        "Socket.io for real-time communication",
-        "Multer for file uploads, Morgan for logging",
-        "Compression and dotenv for optimization",
-      ],
-    },
-    {
-      id: "data-viz",
-      icon: FaChartLine,
-      title: "Data Visualization",
-      subtitle: "ApexCharts • Maps • Tables",
-      color: "purple",
-      description:
-        "Creating interactive data visualizations and mapping solutions for complex datasets.",
-      details: [
-        "ApexCharts and React ApexCharts for dynamic charts",
-        "Mapbox GL and Google Maps API integration",
-        "React Calendar for scheduling interfaces",
-        "TanStack React Table for advanced data tables",
-        "Custom visualization components and dashboards",
-        "Real-time data updates and interactive features",
-      ],
-    },
-    {
-      id: "dev-tools",
-      icon: FaTools,
-      title: "Development Tools",
-      subtitle: "Vite • Jest • ESLint • Prettier",
-      color: "orange",
-      description:
-        "Modern development workflow with cutting-edge build tools and testing frameworks.",
-      details: [
-        "Vite, Expo, and Next.js for fast bundling",
-        "Jest and React Testing Library for comprehensive testing",
-        "ESLint and Prettier for code quality and formatting",
-        "Babel 7 for JavaScript transpilation",
-        "PostCSS + Autoprefixer for CSS processing",
-        "Nodemon for development server automation",
-        "Git workflows and version control best practices",
-      ],
-    },
-    {
-      id: "ui-components",
-      icon: FaPalette,
-      title: "UI Components & Utilities",
-      subtitle: "React Icons • Dropzone • Scrollbars",
-      color: "pink",
-      description:
-        "Comprehensive UI component libraries and utility tools for enhanced user experiences.",
-      details: [
-        "React Icons, MUI Icons, and Expo Vector Icons",
-        "React Dropzone for file handling interfaces",
-        "React Custom Scrollbars for enhanced scrolling",
-        "Refine.dev ecosystem (@refinedev/core, mui, cli)",
-        "Admin framework with devtools and kbar integration",
-        "Custom component development and theming",
-      ],
-    },
-    {
-      id: "deployment",
-      icon: FaCloud,
-      title: "Deployment & Security",
-      subtitle: "Render.com • Expo/EAS • Security First",
-      color: "teal",
-      description:
-        "Secure deployment strategies and comprehensive security implementations.",
-      details: [
-        "Render.com for backend and API hosting",
-        "Expo/EAS for mobile app builds and OTA updates",
-        "JWT with access & refresh token implementation",
-        "Password hashing with bcrypt security",
-        "API rate limiting and slowdown protection",
-        "Helmet for secure HTTP headers",
-        "Input validation and sanitization",
-        "CORS protection and security best practices",
-      ],
-    },
-    {
-      id: "experience",
-      icon: FaUser,
-      title: "Professional IT Journey",
-      subtitle: "5+ Years IT & Development Experience",
-      color: "orange",
-      description:
-        "Comprehensive experience spanning IT infrastructure management, full-stack development, and technical leadership across diverse industries.",
-      details: [
-        "Chief Technology Officer leading dental clinic management systems",
-        "IT infrastructure administration and cybersecurity implementation",
-        "Full-stack web and mobile application development",
-        "Network administration and system security management",
-        "Team leadership and technical mentoring in startup environments",
-        "Healthcare technology solutions with HIPAA compliance",
-        "Cross-platform mobile app development with React Native",
-        "IT consulting and system architecture design",
-      ],
-    },
-    {
-      id: "innovation",
-      icon: FaRocket,
-      title: "Innovation Hub",
-      subtitle: "AI • ML • Emerging Tech",
-      color: "pink",
-      description:
-        "Exploring cutting-edge technologies and pushing the boundaries of what's possible in software development.",
-      details: [
-        "Machine learning integration in web apps",
-        "AI-powered automation solutions",
-        "Blockchain and Web3 exploration",
-        "IoT device integration",
-        "Real-time data processing systems",
-      ],
-    },
-    {
-      id: "philosophy",
-      icon: FaLightbulb,
-      title: "Development Philosophy",
-      subtitle: "Clean • Efficient • Scalable",
-      color: "teal",
-      description:
-        "My approach to software development focuses on creating maintainable, efficient, and scalable solutions.",
-      details: [
-        "Clean code principles and best practices",
-        "Performance optimization and monitoring",
-        "Security-first development approach",
-        "User experience and accessibility",
-        "Continuous learning and improvement",
-      ],
-    },
-  ];
+  // Icon mapping for dynamic icon loading
+  const iconMap = {
+    FaCode,
+    FaServer,
+    FaCloud,
+    FaUser,
+    FaRocket,
+    FaLightbulb,
+    FaChartLine,
+    FaTools,
+    FaPalette,
+  };
+
+  const interactiveWidgets = config.interactiveWidgets.map(widget => ({
+    ...widget,
+    icon: iconMap[widget.icon]
+  }));
 
   const handleWidgetClick = (widgetId) => {
     setActiveModal(widgetId);
@@ -327,14 +146,18 @@ const AboutContent = () => {
         alignItems="center"
       >
         <GridItem>
-          <HeroHeader title="About" subtitle="I am, " highlightText="Me" />
+          <HeroHeader 
+            title={config.hero.title} 
+            subtitle={config.hero.subtitle} 
+            highlightText={config.hero.highlightText} 
+          />
         </GridItem>
 
         <GridItem alignSelf="center" position="relative">
           <TextWithImage
             textContent={textContent}
             imageSrc={dev_avatar}
-            footerTag="Passionate Developer"
+            footerTag={config.image.footerTag}
           />
         </GridItem>
       </Grid>
@@ -347,7 +170,7 @@ const AboutContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Explore My Expertise
+          {config.sectionTitle}
         </Text>
 
         <Grid
@@ -473,12 +296,13 @@ const AboutContent = () => {
 const HeroWithContent = HeroSection(AboutContent);
 
 const About = () => {
+  const config = pagesConfig.about;
   return (
     <HeroWithContent
-      footerHead="Projects I've "
-      footerBody="Worked on"
-      footerSub="Click to view"
-      navigateTo="/projects"
+      footerHead={config.footer.head}
+      footerBody={config.footer.body}
+      footerSub={config.footer.sub}
+      navigateTo={config.footer.navigateTo}
     />
   );
 };
