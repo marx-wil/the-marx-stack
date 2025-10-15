@@ -1,3 +1,5 @@
+
+
 import {
   VStack,
   Grid,
@@ -23,7 +25,7 @@ import {
 } from "react-icons/fa";
 import HeroSection from "../../components/heroSection";
 import TextWithImage from "../../components/TextWithImage";
-import dev_avatar from "../../assets/me/myphoto.jpg";
+import dev_avatar from "../../assets/me/wilmarx.jpg";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
 import { useState } from "react";
@@ -73,6 +75,10 @@ const AboutContent = () => {
         "Framer Motion for smooth animations",
         "React Router v6 and Expo Router for navigation",
         "React Hook Form for efficient form handling",
+        "Vite 5.3.1 for lightning-fast development and builds",
+        "Tailwind CSS 3.4.4 with custom design system",
+        "React Icons 5.2.1 for comprehensive iconography",
+        "Custom dependency injection system for clean architecture",
       ],
     },
     {
@@ -114,6 +120,14 @@ const AboutContent = () => {
         "Socket.io for real-time communication",
         "Multer for file uploads, Morgan for logging",
         "Compression and dotenv for optimization",
+        "NestJS 10.0.0 with decorators and dependency injection",
+        "PostgreSQL with Drizzle ORM 0.31.2 for database operations",
+        "AWS Cognito integration for authentication",
+        "AWS SDK v3 for cloud services integration",
+        "Google Maps Services for geocoding and location data",
+        "Vonage SDK for SMS and communication services",
+        "Comprehensive validation with class-validator",
+        "Cron jobs with @nestjs/schedule for automation",
       ],
     },
     {
@@ -131,6 +145,12 @@ const AboutContent = () => {
         "TanStack React Table for advanced data tables",
         "Custom visualization components and dashboards",
         "Real-time data updates and interactive features",
+        "Google Maps API 3.4.1 for location services",
+        "React Google Maps API 2.20.3 integration",
+        "Google Places Autocomplete 4.1.0 for address input",
+        "Geocoding services for address validation",
+        "Distance calculations and proximity services",
+        "Custom map components and overlays",
       ],
     },
     {
@@ -149,6 +169,11 @@ const AboutContent = () => {
         "PostCSS + Autoprefixer for CSS processing",
         "Nodemon for development server automation",
         "Git workflows and version control best practices",
+        "Vitest 1.6.0 for fast unit testing",
+        "Happy DOM 14.12.3 for browser simulation",
+        "Coverage reporting and test analytics",
+        "Automated testing in CI/CD pipelines",
+        "Code quality monitoring and metrics",
       ],
     },
     {
@@ -166,6 +191,11 @@ const AboutContent = () => {
         "Refine.dev ecosystem (@refinedev/core, mui, cli)",
         "Admin framework with devtools and kbar integration",
         "Custom component development and theming",
+        "Material-UI 5.8.6 with comprehensive component library",
+        "MUI X Data Grid 6.6.0 for advanced data tables",
+        "Refine CLI 2.16.21 for project scaffolding",
+        "Kbar integration for keyboard shortcuts",
+        "Custom theming and component customization",
       ],
     },
     {
@@ -185,6 +215,83 @@ const AboutContent = () => {
         "Helmet for secure HTTP headers",
         "Input validation and sanitization",
         "CORS protection and security best practices",
+        "Heroku deployment with Procfile configuration",
+        "Docker containerization for consistent environments",
+        "PostgreSQL database with SSL connections",
+        "Environment variable management",
+        "Production build optimization",
+        "Health checks and monitoring",
+        "Automated database migrations",
+        "Performance monitoring and logging",
+      ],
+    },
+    {
+      id: "database-orm",
+      icon: FaChartLine,
+      title: "Database & ORM",
+      subtitle: "PostgreSQL • Drizzle ORM • Migrations",
+      color: "indigo",
+      description:
+        "Managing complex data relationships with modern ORM and migration systems for scalable applications.",
+      details: [
+        "PostgreSQL with SSL connections and security",
+        "Drizzle ORM 0.31.2 for type-safe database operations",
+        "Drizzle Kit 0.22.7 for schema management",
+        "Comprehensive migration system with version control",
+        "Database schema design for complex workflows",
+        "Background task scheduling and job management",
+        "BullMQ integration for queue processing",
+        "Data validation and integrity constraints",
+        "Performance optimization and indexing strategies",
+        "MySQL 2 (mysql2) for robust database operations",
+        "Database relationship management",
+        "Query optimization and performance tuning",
+      ],
+    },
+    {
+      id: "queue-system",
+      icon: FaTools,
+      title: "Queue & Job Processing",
+      subtitle: "BullMQ • Background Tasks • Automation",
+      color: "yellow",
+      description:
+        "Implementing robust job processing systems with BullMQ for complex workflow automation and background tasks.",
+      details: [
+        "BullMQ job scheduling and execution system",
+        "Background task management with retry logic",
+        "Age-based job scheduling for complex protocols",
+        "Species-specific protocol automation",
+        "Job statistics and monitoring dashboard",
+        "Cron-based job processing with NestJS Scheduler",
+        "Queue management for complex workflows",
+        "Error handling and job failure recovery",
+        "Scalable job processing architecture",
+        "Job prioritization and load balancing",
+        "Real-time job monitoring and alerts",
+        "Distributed task processing",
+      ],
+    },
+    {
+      id: "admin-panel",
+      icon: FaUser,
+      title: "Admin Panel Development",
+      subtitle: "Refine.dev • Material-UI • React 18",
+      color: "purple",
+      description:
+        "Creating powerful administrative interfaces with modern React frameworks and comprehensive data management.",
+      details: [
+        "Refine.dev 4.47.1 for rapid admin panel development",
+        "Material-UI 5.8.6 with comprehensive component library",
+        "React 18 with TypeScript for type-safe development",
+        "React Hook Form 7.30.0 for efficient form handling",
+        "React Router v6.8.1 for navigation management",
+        "MUI X Data Grid 6.6.0 for advanced data tables",
+        "Refine CLI 2.16.21 for project scaffolding",
+        "Kbar integration for keyboard shortcuts",
+        "Custom theming and component customization",
+        "Advanced data filtering and search",
+        "Role-based access control",
+        "Real-time data updates and notifications",
       ],
     },
     {
@@ -196,12 +303,12 @@ const AboutContent = () => {
       description:
         "Comprehensive experience spanning IT infrastructure management, full-stack development, and technical leadership across diverse industries.",
       details: [
-        "Chief Technology Officer leading dental clinic management systems",
+        "Chief Technology Officer leading complex management systems",
         "IT infrastructure administration and cybersecurity implementation",
         "Full-stack web and mobile application development",
         "Network administration and system security management",
         "Team leadership and technical mentoring in startup environments",
-        "Healthcare technology solutions with HIPAA compliance",
+        "Healthcare technology solutions with compliance focus",
         "Cross-platform mobile app development with React Native",
         "IT consulting and system architecture design",
       ],
@@ -220,6 +327,11 @@ const AboutContent = () => {
         "Blockchain and Web3 exploration",
         "IoT device integration",
         "Real-time data processing systems",
+        "AI-powered health monitoring systems",
+        "Automated workflow processing with BullMQ",
+        "Machine learning integration for predictions",
+        "Advanced analytics and reporting",
+        "Mobile-first responsive design",
       ],
     },
     {
