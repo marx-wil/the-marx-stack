@@ -14,15 +14,8 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import {
-  FaCode,
-  FaRocket,
-  FaLaptop,
-  FaMobile,
-  FaDatabase,
-  FaCloud,
   FaStethoscope,
   FaGraduationCap,
-  FaTools,
 } from "react-icons/fa";
 import HeroSection from "../../components/heroSection";
 import TextWithImage from "../../components/TextWithImage";
