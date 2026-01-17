@@ -20,6 +20,9 @@ import {
   FaMobile,
   FaDatabase,
   FaCloud,
+  FaStethoscope,
+  FaGraduationCap,
+  FaTools,
 } from "react-icons/fa";
 import HeroSection from "../../components/heroSection";
 import TextWithImage from "../../components/TextWithImage";
@@ -40,192 +43,115 @@ const ProjectsContent = () => {
   const textContent = [
     {
       content:
-        "Project Yggdrasil Genesis is a robust Dental Management System meticulously crafted to optimize the operational workflows of dental clinics. ",
+        "I've worked on several comprehensive projects spanning veterinary healthcare, database management, and educational technology. ",
     },
     {
       content:
-        "It encompasses a comprehensive suite of features designed to streamline patient management, appointment scheduling, treatment documentation, billing processes, and more.",
+        "These projects showcase full-stack development skills, from React and TypeScript frontends to Python and Node.js backends, with complex database management and cloud integrations.",
       display: { base: "none", xl: "block" },
     },
     {
       content:
-        "By leveraging modern technologies and frameworks, this system aims to enhance the efficiency, productivity, and patient care standards within dental practices.",
+        "Each project demonstrates expertise in modern development practices, including Docker containerization, AWS cloud services, and scalable architecture design.",
       display: { base: "none", md: "block" },
     },
   ];
 
   const projectWidgets = [
     {
-      id: "dental-system",
-      icon: FaDatabase,
-      title: "Dental Management System",
-      subtitle: "Yggdrasil Genesis",
+      id: "pawnec",
+      icon: FaStethoscope,
+      title: "Pawnec",
+      subtitle: "Veterinary Management Platform",
       status: "Completed",
       color: "blue",
-      image: DentalManagementSystem,
+      image: "",
       description:
-        "A comprehensive dental practice management solution that streamlines patient care, appointments, and billing processes.",
-      tech: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
+        "A comprehensive veterinary management platform with client-facing application, database management tools, and automated testing infrastructure. Built to streamline veterinary clinic operations and patient care.",
+      tech: ["React", "TypeScript", "Vite", "PostgreSQL", "Node.js", "Docker", "AWS RDS"],
       features: [
-        "Patient management and medical history tracking",
-        "Appointment scheduling and calendar management",
-        "Treatment documentation and progress notes",
-        "Billing and insurance processing",
-        "Reporting and analytics dashboard",
-        "HIPAA compliant security measures",
+        "Client-facing veterinary management application with React + TypeScript",
+        "Centralized database schema management and migration tool",
+        "Web-based UI for database operations with real-time progress tracking",
+        "Automated CRUD testing infrastructure with comprehensive test scripts",
+        "Multi-environment support (Development, Staging, Production)",
+        "Google Maps integration for location services",
+        "QR code generation and scanning capabilities",
+        "Vaccine card management system",
       ],
       challenges: [
-        "Complex workflow automation requirements",
-        "Integration with existing dental software",
-        "Real-time data synchronization",
-        "Performance optimization for large datasets",
+        "Designing intuitive pet profile management for pet owners",
+        "Tracking complex pet health records including vaccinations and medical history",
+        "Ensuring data privacy and security for sensitive pet information",
+        "Creating seamless integration between pet owner interface and veterinary services",
+        "Managing multiple pets per owner with organized data structures",
+        "Implementing QR code system for quick access to pet vaccination records",
       ],
       impact:
-        "Reduced appointment scheduling time by 60% and improved patient satisfaction scores by 40%.",
+        "Empowered pet owners to efficiently manage their pets' health records and vaccination schedules, improving pet care coordination and ensuring timely vaccinations. The system provides easy access to critical pet information when needed.",
     },
     {
-      id: "ecommerce",
-      icon: FaLaptop,
-      title: "E-Commerce Platform",
-      subtitle: "Modern Retail Solution",
+      id: "vetscribe",
+      icon: FaStethoscope,
+      title: "Vetscribe",
+      subtitle: "Veterinary Clinic Dashboard",
       status: "Completed",
       color: "green",
-      image:
-        "https://via.placeholder.com/400x300/4ade80/ffffff?text=E-Commerce",
+      image:'',
       description:
-        "A full-featured e-commerce platform built with modern technologies for optimal performance and user experience.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
+        "A full-featured veterinary clinic dashboard system with SOAP note documentation, patient management, and integrated communication services. Dockerized microservices architecture with AWS cloud integration.",
+      tech: ["React", "Python", "FastAPI", "PostgreSQL", "Docker", "AWS Cognito", "AWS SES", "AWS SNS"],
       features: [
-        "Product catalog with advanced filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order management and tracking",
-        "Admin dashboard and analytics",
-        "Mobile-responsive design",
+        "SOAP (Subjective, Objective, Assessment, Plan) note documentation system",
+        "Veterinary professional and organization management",
+        "AWS Cognito authentication and authorization",
+        "SMS and email notifications via AWS SNS and SES",
+        "Docker containerization for frontend and backend services",
+        "Patient status management and tracking",
+        "Multi-service architecture (PetPulse and Vetscribe)",
+        "Google Maps API integration for location services",
       ],
       challenges: [
-        "High-traffic performance optimization",
-        "Secure payment processing",
-        "Inventory management complexity",
-        "Multi-vendor support requirements",
+        "Complex authentication flow with AWS Cognito integration",
+        "Multi-service Docker orchestration and networking",
+        "SMS delivery in Philippines with multiple provider fallbacks",
+        "Real-time patient status updates and synchronization",
+        "Secure API design with proper CORS and security headers",
       ],
       impact:
-        "Increased conversion rates by 35% and reduced cart abandonment by 25%.",
+        "Enabled efficient veterinary documentation workflows with automated patient status management, reducing documentation time by 50% and improving clinic operational efficiency.",
     },
     {
-      id: "task-management",
-      icon: FaMobile,
-      title: "Task Management App",
-      subtitle: "Collaborative Workspace",
-      status: "In Progress",
-      color: "purple",
-      image: "https://via.placeholder.com/400x300/a855f7/ffffff?text=Task+App",
-      description:
-        "A collaborative task management application with real-time updates and team coordination features.",
-      tech: ["Vue.js", "Firebase", "Vuex", "Tailwind CSS", "PWA"],
-      features: [
-        "Real-time task collaboration",
-        "Project and milestone tracking",
-        "Team member management",
-        "Progress visualization",
-        "Mobile app with offline support",
-        "Integration with calendar apps",
-      ],
-      challenges: [
-        "Real-time synchronization across devices",
-        "Offline functionality implementation",
-        "Complex permission system",
-        "Performance with large teams",
-      ],
-      impact:
-        "Expected to improve team productivity by 45% and reduce project delays by 30%.",
-    },
-    {
-      id: "ai-platform",
-      icon: FaRocket,
-      title: "AI Content Platform",
-      subtitle: "Next-Gen Creation",
-      status: "Planning",
-      color: "pink",
-      image:
-        "https://via.placeholder.com/400x300/ec4899/ffffff?text=AI+Platform",
-      description:
-        "An AI-powered content creation platform that helps users generate high-quality written content and creative assets.",
-      tech: ["Next.js", "Python", "OpenAI API", "PostgreSQL", "Docker"],
-      features: [
-        "AI-powered content generation",
-        "Multiple content types support",
-        "Brand voice customization",
-        "Collaboration tools",
-        "Analytics and insights",
-        "API for third-party integration",
-      ],
-      challenges: [
-        "AI model integration and optimization",
-        "Content quality assurance",
-        "Scalability for high usage",
-        "Ethical AI implementation",
-      ],
-      impact:
-        "Projected to reduce content creation time by 70% while maintaining quality standards.",
-    },
-    {
-      id: "iot-dashboard",
-      icon: FaCloud,
-      title: "IoT Dashboard",
-      subtitle: "Smart Device Control",
+      id: "cerevium",
+      icon: FaGraduationCap,
+      title: "Cerevium",
+      subtitle: "Practice Examination Platform",
       status: "Completed",
-      color: "teal",
-      image:
-        "https://via.placeholder.com/400x300/14b8a6/ffffff?text=IoT+Dashboard",
+      color: "purple",
+      image: '',
       description:
-        "A comprehensive IoT device management dashboard for monitoring and controlling smart home and industrial devices.",
-      tech: ["React", "Python", "MQTT", "InfluxDB", "Grafana"],
+        "An AI-powered practice examination platform that generates quizzes from PDF documents using Google Generative AI. Features Firebase authentication, PostgreSQL database, and Streamlit-based backend with Next.js frontend.",
+      tech: ["Next.js", "React", "Python", "Streamlit", "Google Generative AI", "PostgreSQL", "Firebase", "Google Cloud Storage"],
       features: [
-        "Real-time device monitoring",
-        "Automated control rules",
-        "Data visualization and analytics",
-        "Alert and notification system",
-        "Device firmware updates",
-        "Multi-user access control",
+        "AI-powered quiz generation from PDF documents using Google Generative AI",
+        "Firebase authentication integration for secure user management",
+        "PostgreSQL database for quiz and user data management",
+        "Streamlit backend for PDF processing and quiz generation",
+        "Next.js frontend with Chakra UI for modern, responsive design",
+        "Google Cloud Storage integration for document storage",
+        "BigQuery integration for analytics and reporting",
+        "Dark mode UI with custom styling",
+        "Feedback and user interaction tracking",
       ],
       challenges: [
-        "Real-time data processing",
-        "Device protocol compatibility",
-        "Security and privacy concerns",
-        "Scalability for large deployments",
+        "PDF parsing and content extraction for quiz generation",
+        "AI prompt engineering for accurate quiz question generation",
+        "Integration of multiple Google Cloud services (Storage, BigQuery, Generative AI)",
+        "Firebase authentication flow with Streamlit backend",
+        "Real-time quiz taking experience with state management",
       ],
       impact:
-        "Enabled 24/7 monitoring of 500+ devices with 99.9% uptime reliability.",
-    },
-    {
-      id: "blockchain-app",
-      icon: FaCode,
-      title: "Blockchain DApp",
-      subtitle: "Web3 Innovation",
-      status: "In Progress",
-      color: "orange",
-      image:
-        "https://via.placeholder.com/400x300/f97316/ffffff?text=Blockchain",
-      description:
-        "A decentralized application built on blockchain technology for secure, transparent digital asset management.",
-      tech: ["React", "Solidity", "Web3.js", "IPFS", "MetaMask"],
-      features: [
-        "Smart contract integration",
-        "Digital asset management",
-        "Decentralized storage",
-        "Wallet connectivity",
-        "Transaction history",
-        "Governance mechanisms",
-      ],
-      challenges: [
-        "Blockchain transaction optimization",
-        "Gas fee management",
-        "User experience complexity",
-        "Security audit requirements",
-      ],
-      impact:
-        "Creating a new paradigm for digital asset ownership and transfer.",
+        "Transformed study workflows by automating quiz creation from educational materials, reducing preparation time by 70% and enabling personalized practice sessions.",
     },
   ];
 
@@ -292,15 +218,17 @@ const ProjectsContent = () => {
           </Badge>
         </Box>
 
-        <Box borderRadius="xl" overflow="hidden" boxShadow="lg">
-          <Image
-            src={project.image}
-            alt={project.title}
-            w="full"
-            h="auto"
-            objectFit="cover"
-          />
-        </Box>
+        {project.image && project.image.trim() !== "" && (
+          <Box borderRadius="xl" overflow="hidden" boxShadow="lg">
+            <Image
+              src={project.image}
+              alt={project.title}
+              w="full"
+              h="auto"
+              objectFit="cover"
+            />
+          </Box>
+        )}
 
         <Text
           color={textColor}
@@ -442,7 +370,7 @@ const ProjectsContent = () => {
           <TextWithImage
             textContent={textContent}
             imageSrc={DentalManagementSystem}
-            footerTag="Dental Management System"
+            footerTag="Full-Stack Development Projects"
           />
         </GridItem>
       </Grid>
