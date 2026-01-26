@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 const SEO = ({
   title = "Wilmarx - Full Stack Developer & IT Professional | Portfolio",
@@ -19,7 +19,6 @@ const SEO = ({
     url: url,
     image: image,
     sameAs: [
-      // Add your social media profiles here when available
       "https://github.com/marx-wil",
       "https://www.facebook.com/err.marx",
       "https://www.instagram.com/err.marx/",
@@ -93,46 +92,90 @@ const SEO = ({
     },
   };
 
-  return (
-    <Helmet>
-      {/* Primary Meta Tags */}
-      <title>{title}</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content={author} />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
+  useEffect(() => {
+    // Update document title
+    document.title = title;
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_US" />
+    // Helper function to update or create meta tag
+    const updateMetaTag = (attribute, value, content) => {
+      const selector = attribute === "property" ? `meta[property="${value}"]` : `meta[name="${value}"]`;
+      let element = document.querySelector(selector);
+      
+      if (!element) {
+        element = document.createElement("meta");
+        if (attribute === "property") {
+          element.setAttribute("property", value);
+        } else {
+          element.setAttribute("name", value);
+        }
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", content);
+    };
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={url} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+    // Helper function to update or create link tag
+    const updateLinkTag = (rel, href) => {
+      let element = document.querySelector(`link[rel="${rel}"]`);
+      if (!element) {
+        element = document.createElement("link");
+        element.setAttribute("rel", rel);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("href", href);
+    };
 
-      {/* Canonical URL */}
-      <link rel="canonical" href={url} />
+    // Primary Meta Tags
+    updateMetaTag("name", "title", title);
+    updateMetaTag("name", "description", description);
+    updateMetaTag("name", "keywords", keywords);
+    updateMetaTag("name", "author", author);
+    updateMetaTag("name", "robots", "index, follow");
+    updateMetaTag("name", "language", "English");
+    updateMetaTag("name", "revisit-after", "7 days");
 
-      {/* Structured Data - JSON-LD */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(websiteStructuredData)}
-      </script>
-    </Helmet>
-  );
+    // Open Graph / Facebook
+    updateMetaTag("property", "og:type", type);
+    updateMetaTag("property", "og:url", url);
+    updateMetaTag("property", "og:title", title);
+    updateMetaTag("property", "og:description", description);
+    updateMetaTag("property", "og:image", image);
+    updateMetaTag("property", "og:site_name", siteName);
+    updateMetaTag("property", "og:locale", "en_US");
+
+    // Twitter
+    updateMetaTag("name", "twitter:card", "summary_large_image");
+    updateMetaTag("name", "twitter:url", url);
+    updateMetaTag("name", "twitter:title", title);
+    updateMetaTag("name", "twitter:description", description);
+    updateMetaTag("name", "twitter:image", image);
+
+    // Canonical URL
+    updateLinkTag("canonical", url);
+
+    // Remove existing structured data scripts
+    const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    existingScripts.forEach(script => script.remove());
+
+    // Add structured data scripts
+    const script1 = document.createElement("script");
+    script1.type = "application/ld+json";
+    script1.text = JSON.stringify(structuredData);
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement("script");
+    script2.type = "application/ld+json";
+    script2.text = JSON.stringify(websiteStructuredData);
+    document.head.appendChild(script2);
+
+    // Cleanup function
+    return () => {
+      // Note: We don't remove meta tags on cleanup to avoid flickering
+      // The next page will update them anyway
+    };
+  }, [title, description, keywords, image, url, type, author, siteName]);
+
+  // This component doesn't render anything visible
+  return null;
 };
 
 export default SEO;

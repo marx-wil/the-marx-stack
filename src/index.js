@@ -2,21 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
-import { HelmetProvider } from "react-helmet-async";
 import MyRoutes from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./design/sass/poppins.scss";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <HelmetProvider>
-    <ChakraProvider>
-      <React.StrictMode>
-        <Router>
-          <MyRoutes />
-        </Router>
-      </React.StrictMode>
-    </ChakraProvider>
-  </HelmetProvider>
+  <ChakraProvider>
+    <React.StrictMode>
+      <Router>
+        <MyRoutes />
+      </Router>
+    </React.StrictMode>
+  </ChakraProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
