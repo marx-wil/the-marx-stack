@@ -24,6 +24,7 @@ import {
 import HeroSection from "../../components/heroSection";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
+import SEO from "../../components/SEO";
 import { useState } from "react";
 
 const WorkHistoryContent = () => {
@@ -629,12 +630,20 @@ const HeroWithContent = HeroSection(WorkHistoryContent);
 
 const WorkHistory = () => {
   return (
-    <HeroWithContent
-      footerHead="Would you like to"
-      footerBody="Work with me?"
-      footerSub="Click to view"
-      navigateTo="/contact"
-    />
+    <>
+      <SEO
+        title="Work History - Wilmarx | Professional Experience & Career"
+        description="View Wilmarx's professional work history including roles as Chief Information Officer at Stappl Inc., Chief Technology Officer at SysGo Solutions, IT Administrator, and freelance full-stack developer with 5+ years of experience."
+        url="https://the-marx-stack.vercel.app/work-history"
+        keywords="Wilmarx work history, professional experience, CIO, CTO, IT administrator, full stack developer career, Stappl Inc, SysGo Solutions, Asia Scopro, Healthier Fit, freelance developer, IT professional experience"
+      />
+      <HeroWithContent
+        footerHead="Would you like to"
+        footerBody="Work with me?"
+        footerSub="Click to view"
+        navigateTo="/contact"
+      />
+    </>
   );
 };
 

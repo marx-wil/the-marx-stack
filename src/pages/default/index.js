@@ -1,5 +1,6 @@
 import { Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import HeroSection from "../../components/heroSection";
+import SEO from "../../components/SEO";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -104,12 +105,20 @@ const HeroWithContent = HeroSection(HeroContent);
 
 const Default = () => {
   return (
-    <HeroWithContent
-      footerHead="Learn more"
-      footerBody="About me"
-      footerSub="Click to view"
-      navigateTo="/about"
-    />
+    <>
+      <SEO
+        title="Wilmarx - Full Stack Developer & IT Professional | Portfolio"
+        description="Wilmarx is a systems developer and tech enthusiast specializing in full-stack web development, mobile apps, and IT infrastructure. Explore projects in React, Node.js, Python, and more."
+        url="https://the-marx-stack.vercel.app/"
+        keywords="Wilmarx, full stack developer, systems developer, React developer, Node.js developer, Python developer, IT professional, web developer, mobile developer, portfolio, software engineer, TypeScript, Next.js, FastAPI, PostgreSQL, AWS, Docker"
+      />
+      <HeroWithContent
+        footerHead="Learn more"
+        footerBody="About me"
+        footerSub="Click to view"
+        navigateTo="/about"
+      />
+    </>
   );
 };
 

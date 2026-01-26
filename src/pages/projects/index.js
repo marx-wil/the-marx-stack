@@ -22,6 +22,7 @@ import TextWithImage from "../../components/TextWithImage";
 import DentalManagementSystem from "../../assets/projects/dems.jpg";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
+import SEO from "../../components/SEO";
 import { useState } from "react";
 
 const ProjectsContent = () => {
@@ -520,12 +521,20 @@ const HeroWithContent = HeroSection(ProjectsContent);
 
 const Projects = () => {
   return (
-    <HeroWithContent
-      footerHead="A story of "
-      footerBody="My Growth"
-      footerSub="Click to view"
-      navigateTo="/work-history"
-    />
+    <>
+      <SEO
+        title="Projects - Wilmarx Portfolio | Full Stack Development Projects"
+        description="Explore Wilmarx's portfolio of full-stack development projects including Pawnec (veterinary management), Vetscribe (clinic dashboard), and Cerevium (AI-powered practice exams). Built with React, TypeScript, Python, FastAPI, and AWS."
+        url="https://the-marx-stack.vercel.app/projects"
+        keywords="Wilmarx projects, full stack projects, React projects, veterinary management system, clinic dashboard, AI-powered applications, Pawnec, Vetscribe, Cerevium, TypeScript, Python, FastAPI, PostgreSQL, AWS, Docker, portfolio projects"
+      />
+      <HeroWithContent
+        footerHead="A story of "
+        footerBody="My Growth"
+        footerSub="Click to view"
+        navigateTo="/work-history"
+      />
+    </>
   );
 };
 

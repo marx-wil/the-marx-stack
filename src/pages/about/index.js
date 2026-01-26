@@ -28,6 +28,7 @@ import TextWithImage from "../../components/TextWithImage";
 import dev_avatar from "../../assets/me/wilmarx.jpg";
 import HeroHeader from "../../components/HeroHeader";
 import GSAPModal from "../../components/gsapModal";
+import SEO from "../../components/SEO";
 import { useState } from "react";
 
 const AboutContent = () => {
@@ -605,12 +606,20 @@ const HeroWithContent = HeroSection(AboutContent);
 
 const About = () => {
   return (
-    <HeroWithContent
-      footerHead="Projects I've "
-      footerBody="Worked on"
-      footerSub="Click to view"
-      navigateTo="/projects"
-    />
+    <>
+      <SEO
+        title="About Wilmarx - Full Stack Developer & IT Professional"
+        description="Learn about Wilmarx, a systems developer and tech enthusiast with expertise in full-stack development, React, TypeScript, Node.js, Python, mobile development, and IT infrastructure management."
+        url="https://the-marx-stack.vercel.app/about"
+        keywords="Wilmarx, about, full stack developer, systems developer, React, TypeScript, Node.js, Python, FastAPI, PostgreSQL, AWS, Docker, mobile development, React Native, IT professional, skills, expertise"
+      />
+      <HeroWithContent
+        footerHead="Projects I've "
+        footerBody="Worked on"
+        footerSub="Click to view"
+        navigateTo="/projects"
+      />
+    </>
   );
 };
 

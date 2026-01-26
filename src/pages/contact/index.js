@@ -26,6 +26,7 @@ import HeroSection from "../../components/heroSection";
 import { useState } from "react";
 import GSAPModal from "../../components/gsapModal";
 import HeroHeader from "../../components/HeroHeader";
+import SEO from "../../components/SEO";
 
 const ContactContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -512,12 +513,20 @@ const HeroWithContent = HeroSection(ContactContent);
 
 const Contact = () => {
   return (
-    <HeroWithContent
-      footerHead="Go back to"
-      footerBody="Root of Website"
-      footerSub="Click to go back"
-      navigateTo="/"
-    />
+    <>
+      <SEO
+        title="Contact Wilmarx - Get In Touch | Full Stack Developer"
+        description="Contact Wilmarx for full-stack development projects, IT consulting, or collaboration opportunities. Available via email, phone, GitHub, and LinkedIn. Based in Philippines, open to remote work worldwide."
+        url="https://the-marx-stack.vercel.app/contact"
+        keywords="contact Wilmarx, hire full stack developer, web developer contact, IT consultant, freelance developer, React developer, Node.js developer, Python developer, remote developer, Philippines developer"
+      />
+      <HeroWithContent
+        footerHead="Go back to"
+        footerBody="Root of Website"
+        footerSub="Click to go back"
+        navigateTo="/"
+      />
+    </>
   );
 };
 
