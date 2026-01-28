@@ -14,7 +14,11 @@ const HeroContent = () => {
 
     if (!typingText || !cursor) return;
 
-    const words = ["developer.", "designer.", "technologist."];
+    const words = [
+      "systems engineer.",
+      "backend architect.",
+      "reliability engineer.",
+    ];
     let currentWordIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
@@ -97,6 +101,29 @@ const HeroContent = () => {
           }}
         ></span>
       </Text>
+      <Text
+        fontSize={{ base: "md", md: "lg" }}
+        fontWeight="semibold"
+        letterSpacing="0.08rem"
+        lineHeight="1.4"
+        className="poppins"
+        color={useColorModeValue("#6B7280", "#B0B3B8")}
+        textTransform="uppercase"
+      >
+        Chief Information Officer • Stappl Inc.
+      </Text>
+      <Text
+        fontSize={{ base: "md", md: "lg" }}
+        fontWeight="normal"
+        lineHeight="1.6"
+        className="poppins-light"
+        color={useColorModeValue("#6B7280", "#B0B3B8")}
+        maxW={{ base: "full", md: "520px" }}
+      >
+        I design backend platforms with a focus on stability, scalability, and
+        failure recovery. My work prioritizes system behavior under load,
+        resource constraints, and observability-driven operations.
+      </Text>
     </VStack>
   );
 };
@@ -107,14 +134,14 @@ const Default = () => {
   return (
     <>
       <SEO
-        title="Wilmarx - Full Stack Developer & IT Professional | Portfolio"
-        description="Wilmarx is a systems developer and tech enthusiast specializing in full-stack web development, mobile apps, and IT infrastructure. Explore projects in React, Node.js, Python, and more."
+        title="Wilmarx - Systems Engineer & Backend Architect | Portfolio"
+        description="Wilmarx John Cayabyab is a systems engineer focused on backend architecture, reliability engineering, and fault-tolerant platforms. Explore system design, data architecture, and queue-based processing systems."
         url="https://the-marx-stack.vercel.app/"
-        keywords="Wilmarx, full stack developer, systems developer, React developer, Node.js developer, Python developer, IT professional, web developer, mobile developer, portfolio, software engineer, TypeScript, Next.js, FastAPI, PostgreSQL, AWS, Docker"
+        keywords="Wilmarx John Cayabyab, systems engineer, backend architect, reliability engineering, platform engineering, distributed systems, fault tolerance, scalability, system design, failure modeling, queue-based processing, data architecture, observability, performance engineering"
       />
       <HeroWithContent
-        footerHead="Learn more"
-        footerBody="About me"
+        footerHead="View"
+        footerBody="Systems Profile"
         footerSub="Click to view"
         navigateTo="/about"
       />

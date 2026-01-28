@@ -46,20 +46,17 @@ const WorkHistoryContent = () => {
       status: "Current",
       color: "green",
       description:
-        "Leading development of comprehensive full-stack solutions including pet management systems, veterinary clinic dashboards, and AI-powered educational platforms using modern technology stacks.",
+        "Lead architecture and reliability for production platforms across veterinary care and education, with focus on system behavior under load.",
       responsibilities: [
-        "Develop and maintain Pawnec pet management platform with React 18.3.1, TypeScript, and Vite",
-        "Build Vetscribe veterinary clinic dashboard with Python FastAPI backend and React frontend",
-        "Create Cerevium AI-powered practice examination platform with Next.js and Google Generative AI",
-        "Design and implement custom database migration system with web-based UI for centralized schema management",
-        "Integrate AWS services including Cognito, SES, SNS, and RDS for production deployments",
-        "Implement Docker containerization and Docker Compose for multi-service orchestration",
-        "Develop Google Maps API integration for location services and geocoding",
-        "Build QR code generation and scanning capabilities for pet vaccination records",
-        "Implement Firebase authentication and Google Cloud Storage integration",
-        "Create automated testing infrastructure with comprehensive CRUD test scripts",
-        "Develop Streamlit-based backend applications for AI-powered content processing",
-        "Manage multi-environment database configurations (Development, Staging, Production)",
+        "Lead system architecture for Pawnec, Vetscribe, and Cerevium platforms",
+        "Design data architecture and migration discipline for production databases",
+        "Build queue-based processing systems for workflow orchestration",
+        "Define observability requirements for critical workflows",
+        "Integrate authentication and communication services with reliability constraints",
+        "Containerize services for deployment isolation and environment parity",
+        "Implement controlled data access and record traceability",
+        "Maintain multi-environment release workflows and rollback safety",
+        "Coordinate system behavior under load and failure conditions",
       ],
       technologies: [
         "React 18.3.1",
@@ -90,15 +87,11 @@ const WorkHistoryContent = () => {
         "Vitest 1.6.0",
       ],
       achievements: [
-        "Developed Pawnec pet management system enabling pet owners to efficiently manage health records and vaccination schedules",
-        "Built Vetscribe veterinary clinic dashboard with SOAP note documentation, reducing clinic documentation time by 50%",
-        "Created Cerevium AI-powered quiz generation platform using Google Generative AI, reducing study preparation time by 70%",
-        "Designed and implemented custom database migration tool with web UI, reducing migration errors by 80%",
-        "Established multi-service Docker architecture for Vetscribe and PetPulse with zero-downtime deployments",
-        "Integrated AWS Cognito authentication and AWS SES/SNS for secure communication services",
-        "Implemented comprehensive testing infrastructure with automated CRUD test scripts",
-        "Built QR code system for quick access to pet vaccination records",
-        "Successfully deployed production applications with AWS RDS PostgreSQL and cloud services",
+        "Delivered production platforms with defined failure boundaries and recovery workflows",
+        "Reduced documentation overhead with structured clinical workflows",
+        "Implemented queue-based processing systems for reliable background workloads",
+        "Established data migration controls to reduce release risk",
+        "Deployed multi-service architecture with environment parity and rollback safety",
       ],
     },
     {
@@ -110,17 +103,13 @@ const WorkHistoryContent = () => {
       status: "Current",
       color: "blue",
       description:
-        "Leading technical strategy and full-stack development for a startup team providing comprehensive systems for dental clinics.",
+        "Set technical direction for dental clinic platforms with focus on system boundaries, data integrity, and operational readiness.",
       responsibilities: [
-        "Architect and develop full-stack dental clinic management systems",
-        "Lead technical strategy and technology stack decisions",
-        "Build scalable web applications using Next.js, React, and TypeScript",
-        "Design and implement secure backend APIs with Node.js and Express",
-        "Develop mobile applications for clinic staff using React Native and Expo",
-        "Manage database design and optimization for healthcare data",
-        "Implement HIPAA-compliant security measures and data protection",
-        "Lead development team and establish coding standards",
-        "Plan and execute product roadmap and feature development",
+        "Architect clinic management platforms with clear workflow boundaries",
+        "Define data architecture and access control for healthcare data",
+        "Implement secure backend APIs with stability constraints",
+        "Design mobile access paths for field and clinic workflows",
+        "Establish operational practices for reliability and release safety",
       ],
       technologies: [
         "Next.js 15.1.4",
@@ -137,11 +126,9 @@ const WorkHistoryContent = () => {
         "Render.com",
       ],
       achievements: [
-        "Built comprehensive dental clinic management system from scratch",
-        "Implemented HIPAA-compliant data security and patient privacy protection",
-        "Developed mobile app for clinic staff with real-time patient data access",
-        "Established scalable architecture supporting multiple clinic locations",
-        "Reduced clinic administrative tasks by 60% through automation",
+        "Delivered a clinic management platform with multi-location support",
+        "Implemented access control and data protection boundaries",
+        "Introduced workflow automation to reduce manual operations",
       ],
     },
     {
@@ -153,7 +140,7 @@ const WorkHistoryContent = () => {
       status: "Current",
       color: "purple",
       description:
-        "Administering and maintaining comprehensive IT infrastructure including servers, networks, and Fortinet firewall systems.",
+        "Operate and maintain core IT infrastructure with focus on availability, security, and operational continuity.",
       responsibilities: [
         "Administer and maintain IT infrastructure (servers, network systems, Fortinet firewalls)",
         "Ensure high availability and security of all IT systems",
@@ -179,11 +166,10 @@ const WorkHistoryContent = () => {
         "Hardware Management",
       ],
       achievements: [
-        "Maintained 99.9% system uptime across all IT infrastructure",
-        "Reduced security incidents by 80% through improved policies",
-        "Streamlined IT operations saving 15 hours per week",
-        "Successfully managed network migration with zero downtime",
-        "Implemented comprehensive backup system protecting critical data",
+        "Maintained operational uptime across core infrastructure",
+        "Reduced security incidents through policy and access controls",
+        "Completed network migration with controlled downtime",
+        "Implemented backup systems for critical data recovery",
       ],
     },
     {
@@ -195,7 +181,7 @@ const WorkHistoryContent = () => {
       status: "Completed",
       color: "green",
       description:
-        "Led IT department team members and provided comprehensive IT support across software, hardware, networks, and systems.",
+        "Led IT operations for networks, systems, and support workflows with emphasis on reliability and continuity.",
       responsibilities: [
         "Led and motivated IT department team members to align with organizational goals",
         "Delivered full-stack IT support across software, hardware, networks, servers, and systems",
@@ -220,11 +206,10 @@ const WorkHistoryContent = () => {
         "Cost Management",
       ],
       achievements: [
-        "Led IT team to achieve 99.5% system uptime across all operations",
-        "Reduced IT support tickets by 45% through proactive maintenance",
-        "Successfully implemented network security protocols reducing incidents by 70%",
-        "Trained 50+ employees on IT security best practices",
-        "Optimized IT infrastructure saving company $25K annually",
+        "Maintained high availability across operational systems",
+        "Reduced incident volume through proactive maintenance",
+        "Implemented security protocols to lower risk exposure",
+        "Delivered security training for operational staff",
       ],
     },
     {
@@ -236,7 +221,7 @@ const WorkHistoryContent = () => {
       status: "Completed",
       color: "teal",
       description:
-        "Gained foundational experience in IT operations, data management, and system administration in a government training institution.",
+        "Supported IT operations and data management for a government training institution.",
       responsibilities: [
         "Accurately encoded and verified data in the company database ensuring accuracy and timeliness",
         "Organized and maintained records, files, and databases for easy accessibility",
@@ -260,36 +245,28 @@ const WorkHistoryContent = () => {
         "Process Documentation",
       ],
       achievements: [
-        "Successfully completed 3-month internship program with excellent performance",
-        "Maintained 100% data accuracy across all database entries",
-        "Improved data processing efficiency by 30% through standardized procedures",
-        "Received positive feedback from supervisors and team members",
-        "Contributed to streamlining IT processes and documentation",
+        "Maintained data accuracy across assigned datasets",
+        "Improved data processing efficiency through standardized procedures",
+        "Contributed to process documentation and operational support",
       ],
     },
     {
       id: "freelance",
       icon: FaUsers,
-      title: "Freelance Full-Stack Developer",
+      title: "Independent Systems Engineer",
       company: "Various Clients",
       duration: "2018 - Present",
       status: "Ongoing",
       color: "pink",
       description:
-        "Providing comprehensive full-stack development services to diverse clients, combining software development expertise with IT infrastructure knowledge.",
+        "Deliver system architecture and backend platforms for clients with operational constraints and reliability requirements.",
       responsibilities: [
-        "Develop custom web applications using React, Next.js, and TypeScript",
-        "Build mobile applications with React Native and Expo",
-        "Create secure backend APIs with Node.js, Express, and MySQL",
-        "Implement data visualization dashboards and interactive maps",
-        "Provide IT consulting and system architecture recommendations",
-        "Manage project timelines, budgets, and client communications",
-        "Maintain and optimize existing applications for performance",
-        "Provide ongoing support and maintenance for deployed systems",
-        "Integrate IT infrastructure solutions with custom software development",
-        "Implement modern technology stacks including NestJS, PostgreSQL, and Drizzle ORM",
-        "Develop admin panels using Refine.dev and Material-UI",
-        "Integrate cloud services including AWS Cognito and Google Maps API",
+        "Design backend platforms and data architectures",
+        "Build queue-based processing systems and workflow orchestration",
+        "Implement secure APIs with access control boundaries",
+        "Provide architecture reviews and operational guidance",
+        "Maintain systems for performance, reliability, and recovery",
+        "Integrate infrastructure components for deployment and storage",
       ],
       technologies: [
         "Next.js 15",
@@ -318,16 +295,10 @@ const WorkHistoryContent = () => {
         "System Administration",
       ],
       achievements: [
-        "Completed 30+ freelance projects across web, mobile, and IT infrastructure",
-        "Maintained 98% client satisfaction rate with 5-star reviews",
-        "Built long-term relationships with 10+ recurring clients",
-        "Successfully launched 5 mobile applications on app stores",
-        "Generated $100K+ in freelance revenue over 6 years",
-        "Specialized in healthcare, e-commerce, and business automation solutions",
-        "Combined software development with IT infrastructure expertise",
-        "Implemented modern technology stacks for enhanced performance",
-        "Developed comprehensive admin panels and management systems",
-        "Integrated advanced features including queue processing and real-time communication",
+        "Delivered production platforms across healthcare and operations",
+        "Improved stability for systems with recurring workload spikes",
+        "Introduced queue-based processing systems for critical workflows",
+        "Standardized deployment and rollback practices for clients",
       ],
     },
   ];
@@ -402,7 +373,7 @@ const WorkHistoryContent = () => {
 
         <Box>
           <Text fontSize="lg" fontWeight="semibold" color={headingColor} mb={3}>
-            Key Responsibilities:
+            Operational Responsibilities:
           </Text>
           <VStack spacing={2} align="stretch">
             {job.responsibilities.map((responsibility, index) => (
@@ -424,7 +395,7 @@ const WorkHistoryContent = () => {
 
         <Box>
           <Text fontSize="lg" fontWeight="semibold" color={headingColor} mb={3}>
-            Technologies Used:
+            Infrastructure Components:
           </Text>
           <Flex wrap="wrap" gap={2}>
             {job.technologies.map((tech, index) => (
@@ -445,7 +416,7 @@ const WorkHistoryContent = () => {
 
         <Box>
           <Text fontSize="lg" fontWeight="semibold" color={headingColor} mb={3}>
-            Key Achievements:
+            Operational Outcomes:
           </Text>
           <VStack spacing={2} align="stretch">
             {job.achievements.map((achievement, index) => (
@@ -477,7 +448,7 @@ const WorkHistoryContent = () => {
       pb={8}
     >
       <VStack align="flex-start" spacing={4}>
-        <HeroHeader title="My Work" subtitle="Hi" highlightText="story" />
+        <HeroHeader title="Systems" subtitle="Lead" highlightText="ership" />
       </VStack>
 
       <Box>
@@ -489,7 +460,7 @@ const WorkHistoryContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Explore My Professional Journey
+          Systems Leadership and Operations
         </Text>
 
         <Grid
@@ -632,14 +603,14 @@ const WorkHistory = () => {
   return (
     <>
       <SEO
-        title="Work History - Wilmarx | Professional Experience & Career"
-        description="View Wilmarx's professional work history including roles as Chief Information Officer at Stappl Inc., Chief Technology Officer at SysGo Solutions, IT Administrator, and freelance full-stack developer with 5+ years of experience."
+        title="Work History - Wilmarx | Systems Leadership & Operations"
+        description="Work history focused on systems leadership, platform architecture, reliability engineering, and IT operations."
         url="https://the-marx-stack.vercel.app/work-history"
-        keywords="Wilmarx work history, professional experience, CIO, CTO, IT administrator, full stack developer career, Stappl Inc, SysGo Solutions, Asia Scopro, Healthier Fit, freelance developer, IT professional experience"
+        keywords="systems leadership, platform architecture, reliability engineering, CIO, CTO, IT operations, infrastructure engineering, backend systems"
       />
       <HeroWithContent
-        footerHead="Would you like to"
-        footerBody="Work with me?"
+        footerHead="Engagement"
+        footerBody="Channels"
         footerSub="Click to view"
         navigateTo="/contact"
       />

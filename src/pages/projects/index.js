@@ -37,16 +37,16 @@ const ProjectsContent = () => {
   const textContent = [
     {
       content:
-        "I've worked on several comprehensive projects spanning veterinary healthcare, database management, and educational technology. ",
+        "These systems are designed around reliability, workflow integrity, and predictable behavior under load.",
     },
     {
       content:
-        "These projects showcase full-stack development skills, from React and TypeScript frontends to Python and Node.js backends, with complex database management and cloud integrations.",
+        "Each system emphasizes data architecture, queue-based processing systems, and clear component boundaries.",
       display: { base: "none", xl: "block" },
     },
     {
       content:
-        "Each project demonstrates expertise in modern development practices, including Docker containerization, AWS cloud services, and scalable architecture design.",
+        "The focus is on operational readiness, failure recovery, and systems that remain debuggable as they scale.",
       display: { base: "none", md: "block" },
     },
   ];
@@ -61,28 +61,25 @@ const ProjectsContent = () => {
       color: "blue",
       image: "",
       description:
-        "A comprehensive veterinary management platform with client-facing application, database management tools, and automated testing infrastructure. Built to streamline veterinary clinic operations and patient care.",
+        "A veterinary management platform designed around operational workflows, data integrity, and predictable access to clinical records.",
       tech: ["React", "TypeScript", "Vite", "PostgreSQL", "Node.js", "Docker", "AWS RDS"],
       features: [
-        "Client-facing veterinary management application with React + TypeScript",
-        "Centralized database schema management and migration tool",
-        "Web-based UI for database operations with real-time progress tracking",
-        "Automated CRUD testing infrastructure with comprehensive test scripts",
-        "Multi-environment support (Development, Staging, Production)",
-        "Google Maps integration for location services",
-        "QR code generation and scanning capabilities",
-        "Vaccine card management system",
+        "Client portal aligned to clinic workflows and data ownership",
+        "Admin console for operational workflows and record access",
+        "Data architecture with schema management and migration control",
+        "Queue-based processing system for scheduled care workflows",
+        "Location services integration for routing and service coverage",
+        "QR-based record access with controlled visibility",
       ],
       challenges: [
-        "Designing intuitive pet profile management for pet owners",
-        "Tracking complex pet health records including vaccinations and medical history",
-        "Ensuring data privacy and security for sensitive pet information",
-        "Creating seamless integration between pet owner interface and veterinary services",
-        "Managing multiple pets per owner with organized data structures",
-        "Implementing QR code system for quick access to pet vaccination records",
+        "Protecting sensitive records with role-based access control",
+        "Consistency for multi-actor updates across workflows",
+        "Idempotent updates for retries and partial failures",
+        "Availability of records during peak operational hours",
+        "Controlled data sharing between owners and clinics",
       ],
       impact:
-        "Empowered pet owners to efficiently manage their pets' health records and vaccination schedules, improving pet care coordination and ensuring timely vaccinations. The system provides easy access to critical pet information when needed.",
+        "Improved operational consistency for clinic workflows and reduced manual reconciliation of records.",
     },
     {
       id: "vetscribe",
@@ -91,29 +88,27 @@ const ProjectsContent = () => {
       subtitle: "Veterinary Clinic Dashboard",
       status: "Completed",
       color: "green",
-      image:'',
+      image: "",
       description:
-        "A full-featured veterinary clinic dashboard system with SOAP note documentation, patient management, and integrated communication services. Dockerized microservices architecture with AWS cloud integration.",
+        "A clinic operations platform with structured documentation workflows, secure access control, and event-driven communication systems.",
       tech: ["React", "Python", "FastAPI", "PostgreSQL", "Docker", "AWS Cognito", "AWS SES", "AWS SNS"],
       features: [
-        "SOAP (Subjective, Objective, Assessment, Plan) note documentation system",
-        "Veterinary professional and organization management",
-        "AWS Cognito authentication and authorization",
-        "SMS and email notifications via AWS SNS and SES",
-        "Docker containerization for frontend and backend services",
-        "Patient status management and tracking",
-        "Multi-service architecture (PetPulse and Vetscribe)",
-        "Google Maps API integration for location services",
+        "Structured SOAP documentation workflow with auditability",
+        "Authentication boundary via AWS Cognito",
+        "Event-driven communication system via SNS and SES",
+        "Containerized service separation for web and API",
+        "Queue-based processing system for asynchronous workflows",
+        "Patient status transitions with controlled state changes",
       ],
       challenges: [
-        "Complex authentication flow with AWS Cognito integration",
-        "Multi-service Docker orchestration and networking",
-        "SMS delivery in Philippines with multiple provider fallbacks",
-        "Real-time patient status updates and synchronization",
-        "Secure API design with proper CORS and security headers",
+        "Multi-service coordination and failure isolation",
+        "Identity integration with external auth provider",
+        "Event delivery reliability and retries",
+        "Consistent patient state transitions under load",
+        "Secure API boundaries and rate control",
       ],
       impact:
-        "Enabled efficient veterinary documentation workflows with automated patient status management, reducing documentation time by 50% and improving clinic operational efficiency.",
+        "Reduced documentation overhead and improved traceability of patient workflows.",
     },
     {
       id: "cerevium",
@@ -122,30 +117,27 @@ const ProjectsContent = () => {
       subtitle: "Practice Examination Platform",
       status: "Completed",
       color: "purple",
-      image: '',
+      image: "",
       description:
-        "An AI-powered practice examination platform that generates quizzes from PDF documents using Google Generative AI. Features Firebase authentication, PostgreSQL database, and Streamlit-based backend with Next.js frontend.",
+        "A practice examination platform built around document ingestion, processing pipelines, and AI-driven content generation.",
       tech: ["Next.js", "React", "Python", "Streamlit", "Google Generative AI", "PostgreSQL", "Firebase", "Google Cloud Storage"],
       features: [
-        "AI-powered quiz generation from PDF documents using Google Generative AI",
-        "Firebase authentication integration for secure user management",
-        "PostgreSQL database for quiz and user data management",
-        "Streamlit backend for PDF processing and quiz generation",
-        "Next.js frontend with Chakra UI for modern, responsive design",
-        "Google Cloud Storage integration for document storage",
-        "BigQuery integration for analytics and reporting",
-        "Dark mode UI with custom styling",
-        "Feedback and user interaction tracking",
+        "Document ingestion and parsing pipeline for PDFs",
+        "Queue-based processing system for extraction and generation",
+        "Model orchestration with prompt versioning",
+        "Storage architecture for source documents and outputs",
+        "Analytics pipeline for usage and outcome tracking",
+        "Secure access control and user management",
       ],
       challenges: [
-        "PDF parsing and content extraction for quiz generation",
-        "AI prompt engineering for accurate quiz question generation",
-        "Integration of multiple Google Cloud services (Storage, BigQuery, Generative AI)",
-        "Firebase authentication flow with Streamlit backend",
-        "Real-time quiz taking experience with state management",
+        "PDF parsing variability and extraction errors",
+        "Latency control for generation workflows",
+        "Consistency between generated items and source material",
+        "Multi-service authentication and storage integration",
+        "Cost control for compute and storage use",
       ],
       impact:
-        "Transformed study workflows by automating quiz creation from educational materials, reducing preparation time by 70% and enabling personalized practice sessions.",
+        "Reduced time to create practice sets and improved repeatability of content workflows.",
     },
   ];
 
@@ -240,7 +232,7 @@ const ProjectsContent = () => {
             color={projectTextColor}
             mb={3}
           >
-            Technology Stack:
+            Infrastructure Components:
           </Text>
           <Flex wrap="wrap" gap={2}>
             {project.tech.map((tech, index) => (
@@ -266,7 +258,7 @@ const ProjectsContent = () => {
             color={projectTextColor}
             mb={3}
           >
-            Key Features:
+            Architectural Components:
           </Text>
           <VStack spacing={2} align="stretch">
             {project.features.map((feature, index) => (
@@ -294,7 +286,7 @@ const ProjectsContent = () => {
               color={projectTextColor}
               mb={3}
             >
-              Challenges:
+              Failure Cases & Constraints:
             </Text>
             <VStack spacing={2} align="stretch">
               {project.challenges.map((challenge, index) => (
@@ -325,7 +317,7 @@ const ProjectsContent = () => {
               color={projectTextColor}
               mb={3}
             >
-              Impact:
+              Operational Outcomes:
             </Text>
             <Text
               color={textColor}
@@ -357,14 +349,14 @@ const ProjectsContent = () => {
         alignItems="center"
       >
         <GridItem>
-          <HeroHeader title="My Works" subtitle="Pro" highlightText="jects." />
+          <HeroHeader title="Systems" subtitle="Port" highlightText="folio" />
         </GridItem>
 
         <GridItem alignSelf="center" position="relative">
           <TextWithImage
             textContent={textContent}
             imageSrc={DentalManagementSystem}
-            footerTag="Full-Stack Development Projects"
+            footerTag="Systems Portfolio"
           />
         </GridItem>
       </Grid>
@@ -378,7 +370,7 @@ const ProjectsContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Explore My Projects
+          Systems Overview
         </Text>
 
         <Grid
@@ -523,14 +515,14 @@ const Projects = () => {
   return (
     <>
       <SEO
-        title="Projects - Wilmarx Portfolio | Full Stack Development Projects"
-        description="Explore Wilmarx's portfolio of full-stack development projects including Pawnec (veterinary management), Vetscribe (clinic dashboard), and Cerevium (AI-powered practice exams). Built with React, TypeScript, Python, FastAPI, and AWS."
+        title="Systems Portfolio - Wilmarx | Backend Architecture & Reliability"
+        description="Systems portfolio featuring platforms designed for reliability, data architecture, and queue-based processing systems, including Pawnec, Vetscribe, and Cerevium."
         url="https://the-marx-stack.vercel.app/projects"
-        keywords="Wilmarx projects, full stack projects, React projects, veterinary management system, clinic dashboard, AI-powered applications, Pawnec, Vetscribe, Cerevium, TypeScript, Python, FastAPI, PostgreSQL, AWS, Docker, portfolio projects"
+        keywords="systems portfolio, backend architecture, reliability engineering, system design, queue-based processing, data architecture, Pawnec, Vetscribe, Cerevium"
       />
       <HeroWithContent
-        footerHead="A story of "
-        footerBody="My Growth"
+        footerHead="System"
+        footerBody="Leadership"
         footerSub="Click to view"
         navigateTo="/work-history"
       />

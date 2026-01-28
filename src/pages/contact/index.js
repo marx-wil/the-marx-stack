@@ -80,7 +80,7 @@ const ContactContent = () => {
       subtitle: "Get in Touch",
       color: "blue",
       description:
-        "Ready to start a conversation? Send me a message and I'll get back to you as soon as possible.",
+        "Use this form for system architecture, reliability, or platform engineering discussions.",
       action: "Open Form",
     },
     {
@@ -90,9 +90,9 @@ const ContactContent = () => {
       subtitle: "wilmarx@gmail.com",
       color: "green",
       description:
-        "Prefer email? Drop me a line directly. I typically respond within 24 hours.",
+        "Direct email for technical inquiries and collaboration requests.",
       action: "Send Email",
-      href: "mailto:wilmarx@example.com",
+      href: "mailto:wilmarx@gmail.com",
     },
     {
       id: "phone",
@@ -101,7 +101,7 @@ const ContactContent = () => {
       subtitle: "+63 963 877 3839",
       color: "purple",
       description:
-        "Need to talk? Feel free to call me during business hours. I'm always happy to discuss new opportunities.",
+        "Phone contact for time-sensitive coordination.",
       action: "Call Now",
       href: "tel:+639638773839",
     },
@@ -112,7 +112,7 @@ const ContactContent = () => {
       subtitle: "Cabuyao, Povince of Laguna",
       color: "orange",
       description:
-        " Based in the Philippines, but open to remote opportunities worldwide.",
+        "Based in the Philippines. Remote collaboration available.",
       action: "View Map",
       href: "#",
     },
@@ -123,7 +123,7 @@ const ContactContent = () => {
       subtitle: "marx-wil",
       color: "gray",
       description:
-        "Check out my open source contributions and personal projects. Always happy to collaborate!",
+        "Code repositories and system prototypes.",
       action: "Visit Profile",
       href: "https://github.com/marx-wil",
     },
@@ -134,7 +134,7 @@ const ContactContent = () => {
       subtitle: "Professional Network",
       color: "blue",
       description:
-        "Connect with me professionally. Let's discuss opportunities and share industry insights.",
+        "Professional profile and work history.",
       action: "Connect",
       href: "https://linkedin.com/in/wilmarx-cayabyab/",
     },
@@ -374,9 +374,9 @@ const ContactContent = () => {
     >
       <VStack align="flex-start" spacing={4}>
         <HeroHeader
-          title="GET IN TOUCH"
-          subtitle="Contact&nbsp;"
-          highlightText="Me"
+          title="Contact"
+          subtitle="Engage&nbsp;"
+          highlightText="Systems"
         />
       </VStack>
 
@@ -389,7 +389,7 @@ const ContactContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Choose Your Preferred Method
+          Engagement Channels
         </Text>
 
         <Grid
@@ -515,10 +515,10 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact Wilmarx - Get In Touch | Full Stack Developer"
-        description="Contact Wilmarx for full-stack development projects, IT consulting, or collaboration opportunities. Available via email, phone, GitHub, and LinkedIn. Based in Philippines, open to remote work worldwide."
+        title="Contact Wilmarx - Systems Engineering | Engage"
+        description="Contact Wilmarx for systems architecture, reliability engineering, and backend platform work. Available via email, phone, GitHub, and LinkedIn."
         url="https://the-marx-stack.vercel.app/contact"
-        keywords="contact Wilmarx, hire full stack developer, web developer contact, IT consultant, freelance developer, React developer, Node.js developer, Python developer, remote developer, Philippines developer"
+        keywords="contact systems engineer, backend architecture, reliability engineering, platform engineering, infrastructure engineering"
       />
       <HeroWithContent
         footerHead="Go back to"

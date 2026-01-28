@@ -10,146 +10,6 @@ import {
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-const ImageOverlay = ({ isOpen, onClose, imageSrc }) => {
-  const overlayRef = useRef(null);
-  const imageRef = useRef(null);
-  const [countdown, setCountdown] = useState(5);
-  const countdownIntervalRef = useRef(null);
-  const closeTimeoutRef = useRef(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      setCountdown(5);
-
-      if (countdownIntervalRef.current) {
-        clearInterval(countdownIntervalRef.current);
-      }
-      if (closeTimeoutRef.current) {
-        clearTimeout(closeTimeoutRef.current);
-      }
-
-      countdownIntervalRef.current = setInterval(() => {
-        setCountdown((prev) => {
-          if (prev <= 1) {
-            clearInterval(countdownIntervalRef.current);
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-
-      closeTimeoutRef.current = setTimeout(() => {
-        handleClose();
-      }, 5000);
-
-      gsap.to(overlayRef.current, {
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
-        duration: 0.3,
-        ease: "power2.inOut",
-      });
-      gsap.fromTo(
-        imageRef.current,
-        {
-          scale: 0.5,
-          opacity: 0,
-          y: 50,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "back.out(1.7)",
-        }
-      );
-    }
-
-    return () => {
-      if (countdownIntervalRef.current) {
-        clearInterval(countdownIntervalRef.current);
-      }
-      if (closeTimeoutRef.current) {
-        clearTimeout(closeTimeoutRef.current);
-      }
-    };
-    // eslint-disable-next-line
-  }, [isOpen]);
-
-  const handleClose = () => {
-    gsap.to(overlayRef.current, {
-      backgroundColor: "rgba(0, 0, 0, 0)",
-      duration: 0.3,
-      ease: "power2.inOut",
-    });
-    gsap.to(imageRef.current, {
-      scale: 0.5,
-      opacity: 0,
-      y: 50,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: onClose,
-    });
-  };
-
-  if (!isOpen) return null;
-
-  return (
-    <Box
-      ref={overlayRef}
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      bottom={0}
-      backgroundColor="rgba(0, 0, 0, 0)"
-      zIndex={1000}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      onClick={handleClose}
-    >
-      <Box
-        ref={imageRef}
-        maxW="90vw"
-        maxH="90vh"
-        overflow="hidden"
-        borderRadius="xl"
-        display="flex"
-        alignItems="center"
-        position="relative"
-      >
-        <Image
-          src={imageSrc}
-          alt="Image"
-          objectFit="cover"
-          objectPosition="center center"
-          maxH="90vh"
-          w="auto"
-          h="auto"
-        />
-
-        <Flex
-          position="absolute"
-          bottom="0"
-          left="0"
-          right="0"
-          bg="rgba(0,0,0,0.6)"
-          color="white"
-          p={3}
-          justifyContent="center"
-          alignItems="center"
-          borderBottomRadius="xl"
-          fontSize="md"
-          fontWeight="medium"
-          className="poppins"
-        >
-          <Text>Closing in {countdown} seconds</Text>
-        </Flex>
-      </Box>
-    </Box>
-  );
-};
-
 const TextWithImage = ({
   textContent,
   imageSrc,
@@ -158,14 +18,10 @@ const TextWithImage = ({
   spacing = { base: 4, md: 8 },
   padding = { base: 4, md: 0 },
 }) => {
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-  const [showImage, setShowImage] = useState(false);
-  const [countdown, setCountdown] = useState(5);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const textSize = useBreakpointValue({ base: "sm", md: "md" });
-  const imageRef = useRef(null);
-  const textRef = useRef(null);
-  const hideImageTimeoutRef = useRef(null);
-  const countdownIntervalRef = useRef(null);
+  const overlayRef = useRef(null);
+  const modalRef = useRef(null);
 
   const textColor = useColorModeValue("gray.700", "gray.300");
   const bgColor = useColorModeValue("white", "gray.800");
@@ -173,86 +29,50 @@ const TextWithImage = ({
   const previewBorderColor = useColorModeValue("gray.200", "gray.600");
   const footerLineColor = useColorModeValue("gray.300", "gray.600");
   const footerTextColor = useColorModeValue("gray.600", "gray.400");
-  const gradientLight = useColorModeValue(
-    "linear-gradient(135deg, #63B3ED44, #4299E122)",
-    "linear-gradient(135deg, #63B3ED22, #4299E111)"
-  );
 
   const handleToggleImage = () => {
-    setShowImage(true);
-    setCountdown(5);
-
-    if (hideImageTimeoutRef.current) {
-      clearTimeout(hideImageTimeoutRef.current);
-    }
-
-    if (countdownIntervalRef.current) {
-      clearInterval(countdownIntervalRef.current);
-    }
-
-    countdownIntervalRef.current = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(countdownIntervalRef.current);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    hideImageTimeoutRef.current = setTimeout(() => {
-      setShowImage(false);
-    }, 5000);
+    setIsPopupOpen(true);
   };
-
-  const handleImageClick = () => {
-    setIsOverlayOpen(true);
+  const handleClosePopup = () => {
+    if (!overlayRef.current || !modalRef.current) {
+      setIsPopupOpen(false);
+      return;
+    }
+    gsap.to(overlayRef.current, {
+      backgroundColor: "rgba(0,0,0,0)",
+      duration: 0.2,
+      ease: "power2.inOut",
+    });
+    gsap.to(modalRef.current, {
+      opacity: 0,
+      scale: 0.96,
+      y: 10,
+      duration: 0.2,
+      ease: "power2.inOut",
+      onComplete: () => setIsPopupOpen(false),
+    });
   };
 
   useEffect(() => {
-    return () => {
-      if (hideImageTimeoutRef.current) {
-        clearTimeout(hideImageTimeoutRef.current);
+    if (!isPopupOpen || !overlayRef.current || !modalRef.current) return;
+    gsap.set(modalRef.current, { opacity: 0, scale: 0.96, y: 10 });
+    gsap.fromTo(
+      overlayRef.current,
+      { backgroundColor: "rgba(0,0,0,0)" },
+      {
+        backgroundColor: "rgba(0,0,0,0.6)",
+        duration: 0.2,
+        ease: "power2.inOut",
       }
-      if (countdownIntervalRef.current) {
-        clearInterval(countdownIntervalRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (imageRef.current && textRef.current) {
-      if (showImage) {
-        gsap.to(imageRef.current, {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.inOut",
-          zIndex: 2,
-        });
-
-        gsap.to(textRef.current, {
-          opacity: 0.3,
-          duration: 0.5,
-          ease: "power2.inOut",
-        });
-      } else {
-        gsap.to(imageRef.current, {
-          y: "100%",
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.inOut",
-          zIndex: 1,
-        });
-
-        gsap.to(textRef.current, {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.inOut",
-        });
-      }
-    }
-  }, [showImage]);
+    );
+    gsap.to(modalRef.current, {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 0.25,
+      ease: "power2.out",
+    });
+  }, [isPopupOpen]);
 
   return (
     <VStack
@@ -266,12 +86,11 @@ const TextWithImage = ({
       <Box
         position="relative"
         width="100%"
-        minHeight={{ base: "250px", md: "350px" }}
+        minHeight={{ base: "360px", md: "540px" }}
         height="auto"
         overflow="hidden"
       >
         <Box
-          ref={textRef}
           position="relative"
           width="100%"
           height="auto"
@@ -365,79 +184,57 @@ const TextWithImage = ({
           </Box>
         </Box>
 
-        <Box
-          ref={imageRef}
-          position="absolute"
-          width="100%"
-          height="100%"
-          top="0"
-          left="0"
-          y="100%"
-          opacity={0}
-          zIndex={1}
-          onClick={(e) => {
-            e.stopPropagation();
-            handleImageClick();
-          }}
-        >
+        {isPopupOpen && (
           <Box
-            position="relative"
-            padding={{ base: 2, md: 3 }}
-            width="100%"
-            height="100%"
-            _before={{
-              content: '""',
-              position: "absolute",
-              inset: "0",
-              borderRadius: "2xl",
-              padding: "1px",
-              background: gradientLight,
-              WebkitMask:
-                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              WebkitMaskComposite: "xor",
-              maskComposite: "exclude",
-            }}
+            position="fixed"
+            inset={0}
+            bg="rgba(0,0,0,0)"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            zIndex={1000}
+            onClick={handleClosePopup}
+            ref={overlayRef}
           >
-            <Image
-              src={imageSrc}
-              alt="Full size"
-              width="100%"
-              height="auto"
-              maxH={{ base: "300px", md: "500px" }}
-              objectFit="cover"
-              objectPosition="center"
+            <Box
+              position="relative"
+              maxW={{ base: "92%", md: "80%" }}
+              maxH={{ base: "90%", md: "85%" }}
+              bg="black"
               borderRadius="xl"
-              transition="all 0.3s ease"
-            />
-
-            {showImage && (
+              overflow="hidden"
+              boxShadow="2xl"
+              onClick={(e) => e.stopPropagation()}
+              ref={modalRef}
+            >
+              <Image
+                src={imageSrc}
+                alt="Photo"
+                width="100%"
+                height="100%"
+                objectFit="contain"
+                objectPosition="center"
+              />
               <Flex
                 position="absolute"
-                bottom="0"
-                left="0"
-                right="0"
-                bg="rgba(0,0,0,0.6)"
+                top={3}
+                right={3}
+                bg="rgba(0,0,0,0.7)"
                 color="white"
-                p={2}
-                justifyContent="center"
-                alignItems="center"
-                borderBottomRadius="xl"
+                px={3}
+                py={2}
+                borderRadius="full"
                 fontSize="sm"
-                fontWeight="medium"
-                className="poppins"
+                fontWeight="semibold"
+                cursor="pointer"
+                onClick={handleClosePopup}
               >
-                <Text>Closing in {countdown} seconds</Text>
+                <Text>Close</Text>
               </Flex>
-            )}
+            </Box>
           </Box>
-        </Box>
+        )}
       </Box>
-
-      <ImageOverlay
-        isOpen={isOverlayOpen}
-        onClose={() => setIsOverlayOpen(false)}
-        imageSrc={imageSrc}
-      />
 
       {footerTag && (
         <Flex justify="flex-end" mt={2}>

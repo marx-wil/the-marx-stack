@@ -43,334 +43,349 @@ const AboutContent = () => {
   const textContent = [
     {
       content:
-        "Hi, I'm Wilmarx — a systems developer and tech enthusiast with a lifelong curiosity for how things work beneath the surface. That fascination with the inner workings of technology led me into the world of IT and systems development, where I get to turn that passion into purposeful work.",
+        "I design backend platforms with a focus on stability, scalability, and fault tolerance. My work centers on predictable behavior under load, resource constraints, and recovery from failure.",
     },
     {
       content:
-        "As an IT professional, I help design and maintain systems that keep operations running smoothly and securely. Whether configuring servers, managing backend logic, or troubleshooting issues, I enjoy building tools that are efficient, reliable, and impactful.",
+        "I model systems as interacting components with defined interfaces, data flows, and operational constraints. This keeps architecture observable and maintainable as complexity grows.",
       display: { base: "none", xl: "block" },
     },
     {
       content:
-        "I'm also growing as a systems developer, diving into frontend and backend technologies to craft seamless digital experiences. I'm always eager to learn and adapt — because in tech, there's always something new to explore and improve.",
+        "As Chief Information Officer at Stappl Inc., I lead platform architecture, reliability posture, and operational readiness across production systems.",
       display: { base: "none", md: "block" },
     },
   ];
 
-  const interactiveWidgets = [
+  const systemFocusWidgets = [
+    {
+      id: "system-architecture",
+      icon: FaServer,
+      title: "System Architecture",
+      subtitle: "Decomposition • Interfaces • Boundaries",
+      color: "blue",
+      description:
+        "Design platforms as interacting components with defined contracts, data ownership, and failure boundaries.",
+      details: [
+        "Architectural decomposition into subsystems and services",
+        "Interface design for workflows and data flow ownership",
+        "Failure boundaries and fault containment strategies",
+        "Load-aware design and capacity planning",
+        "Architecture documentation mapped to runtime behavior",
+      ],
+    },
+    {
+      id: "reliability-engineering",
+      icon: FaLightbulb,
+      title: "Reliability Engineering",
+      subtitle: "Failure Modeling • Recovery • Degradation",
+      color: "green",
+      description:
+        "Model how systems degrade, fail, and recover under stress, load, and concurrency.",
+      details: [
+        "Failure modeling for critical workflows",
+        "Graceful degradation and recovery processes",
+        "Backpressure handling and rate control",
+        "Crash recovery design and restart safety",
+        "Operational runbooks and failure response",
+      ],
+    },
+    {
+      id: "data-architecture",
+      icon: FaChartLine,
+      title: "Data Architecture",
+      subtitle: "Schema Design • Consistency • Scaling",
+      color: "purple",
+      description:
+        "Design data models that match workflows, constraints, and consistency requirements.",
+      details: [
+        "Schema design aligned to system workflows",
+        "Data integrity and constraint modeling",
+        "Indexing strategy and query performance",
+        "Multi-environment migration discipline",
+        "Storage lifecycle and retention planning",
+      ],
+    },
+    {
+      id: "queue-systems",
+      icon: FaTools,
+      title: "Queue-Based Processing Systems",
+      subtitle: "Workflows • Retries • Backpressure",
+      color: "orange",
+      description:
+        "Build queue-based processing systems for durable, observable, and recoverable workflows.",
+      details: [
+        "Queue-worker architectures with retry strategy",
+        "Idempotent processing and failure recovery",
+        "Workload partitioning and prioritization",
+        "Schedule-driven and event-driven workflows",
+        "Job telemetry and queue visibility",
+      ],
+    },
+    {
+      id: "observability",
+      icon: FaPalette,
+      title: "Observability & Diagnostics",
+      subtitle: "Metrics • Tracing • Alerting",
+      color: "teal",
+      description:
+        "Design observability pipelines that expose runtime behavior and failure signals.",
+      details: [
+        "Structured logging aligned to workflows",
+        "Metrics for capacity, latency, and error rates",
+        "Tracing for cross-service latency analysis",
+        "Alerting tied to service-level thresholds",
+        "Incident visibility and root cause analysis",
+      ],
+    },
+    {
+      id: "resource-isolation",
+      icon: FaCloud,
+      title: "Resource Isolation",
+      subtitle: "Workload Separation • Capacity Guards",
+      color: "cyan",
+      description:
+        "Protect critical workflows by isolating resources and controlling contention.",
+      details: [
+        "Worker and web process separation",
+        "Concurrency limits and load shedding",
+        "Workload separation for heavy processes",
+        "Memory and CPU usage guards",
+        "Capacity-aware routing and scheduling",
+      ],
+    },
+    {
+      id: "infrastructure-components",
+      icon: FaCode,
+      title: "Infrastructure Components",
+      subtitle: "Runtime • Storage • Delivery",
+      color: "indigo",
+      description:
+        "Select infrastructure components based on reliability, observability, and operational constraints.",
+      details: [
+        "Node.js, NestJS, Express for backend runtime",
+        "PostgreSQL and MySQL for data architecture",
+        "Redis and BullMQ for queue-based processing",
+        "Docker for environment parity and isolation",
+        "Heroku, Railway, and S3-compatible storage",
+      ],
+    },
+    {
+      id: "engineering-philosophy",
+      icon: FaLightbulb,
+      title: "Engineering Philosophy",
+      subtitle: "Stability • Predictability • Clarity",
+      color: "pink",
+      description:
+        "Design for failure, isolate complexity, and prioritize operational clarity over speed.",
+      details: [
+        "Design for failure, not perfection",
+        "Isolation over coupling",
+        "Stability over speed",
+        "Observability over assumptions",
+        "Scalability over shortcuts",
+      ],
+    },
+    {
+      id: "career-direction",
+      icon: FaUser,
+      title: "Career Direction",
+      subtitle: "Platform • Infrastructure • Reliability",
+      color: "yellow",
+      description:
+        "Focused on roles that require system design, reliability engineering, and platform architecture.",
+      details: [
+        "Platform Engineering",
+        "Infrastructure Engineering",
+        "Backend Systems Architecture",
+        "Reliability Engineering (SRE)",
+        "Distributed Systems Engineering",
+      ],
+    },
+  ];
+
+  const expertiseWidgets = [
     {
       id: "frontend",
       icon: FaCode,
-      title: "Frontend Excellence",
+      title: "Client Interfaces",
       subtitle: "Next.js • React • TypeScript • Vite",
       color: "blue",
       description:
-        "Crafting modern, responsive web applications with cutting-edge frameworks and UI libraries.",
+        "Web interfaces built for operational workflows and data access clarity.",
       details: [
-        "Next.js 16.1.1 with App Router (Cerevium)",
-        "React 18.3.1+ with TypeScript for type-safe development",
-        "Vite 5.3.1 for lightning-fast development and builds (Pawnec client)",
-        "Chakra UI 3.31.0 for component libraries (Cerevium)",
-        "Tailwind CSS 3.4.4+ with custom design system",
-        "React Router v6 for navigation",
-        "React Hook Form 7.52.1 for efficient form handling",
-        "Google Maps API integration for location services",
-        "QR code generation and scanning (Pawnec)",
-        "React Icons 5.2.1+ for comprehensive iconography",
-        "Axios for HTTP requests with retry logic",
-        "PostHog and Google Analytics integration",
-        "Sentry for error tracking and monitoring",
-        "Custom dependency injection system for clean architecture",
-        "GSAP animations for smooth user experiences",
+        "Next.js with App Router for structured routing",
+        "React with TypeScript for type-safe UI behavior",
+        "Vite for efficient local development and builds",
+        "Chakra UI and Tailwind CSS for component systems",
+        "React Router for navigation control",
+        "React Hook Form for structured input handling",
+        "Maps and geocoding integrations for location workflows",
+        "Error tracking and analytics instrumentation",
       ],
     },
     {
       id: "mobile",
       icon: FaRocket,
-      title: "Mobile Development",
-      subtitle: "Expo SDK 53 • React Native 0.79.4",
+      title: "Mobile Clients",
+      subtitle: "Expo SDK • React Native",
       color: "cyan",
-      description:
-        "Building cross-platform mobile applications with React Native and Expo ecosystem.",
+      description: "Cross-platform clients for field and operational access.",
       details: [
-        "Expo SDK 53 with latest native modules and APIs",
-        "React Native 0.79.4 with React 19.0.0 support",
-        "React Navigation 7.x for seamless navigation",
-        "Expo modules: Blur, Constants, Font, Haptics, Image",
-        "Expo Linking, Splash Screen, Status Bar, Symbols",
-        "NativeWind for Tailwind CSS in React Native",
-        "Expo Vector Icons for comprehensive icon sets",
-        "System UI and Web Browser integrations",
+        "Expo SDK with native modules and APIs",
+        "React Native with React Navigation",
+        "NativeWind for Tailwind-style theming",
+        "Expo modules for device integration",
       ],
     },
     {
       id: "backend",
       icon: FaServer,
-      title: "Backend Engineering",
-      subtitle: "Node.js • Python • FastAPI • Express.js • TypeScript",
+      title: "Backend Systems",
+      subtitle: "Node.js • Python • FastAPI • Express • NestJS",
       color: "green",
       description:
-        "Building secure, scalable server-side applications with modern Node.js and Python ecosystems.",
+        "Backend services designed for reliability, access control, and predictable processing.",
       details: [
-        "Node.js (≥18) with Express.js 4.18.2 framework",
-        "Python with FastAPI for high-performance APIs",
-        "Streamlit for data applications and AI-powered interfaces",
-        "TypeScript for type-safe backend development",
-        "PostgreSQL with native pg driver and custom migration systems",
-        "MySQL 2 (mysql2) for robust database operations",
-        "JWT authentication with access & refresh tokens",
-        "AWS Cognito integration for authentication (Vetscribe)",
-        "bcryptjs for secure password hashing",
-        "Helmet for security headers and CORS protection",
-        "Express Validator for input validation",
-        "Express Rate Limit and Express Slow Down for API protection",
-        "Socket.io for real-time communication",
-        "Multer for file uploads, Morgan for logging",
-        "Compression and dotenv for optimization",
-        "NestJS 10.0.0 with decorators and dependency injection",
-        "PostgreSQL with Drizzle ORM 0.31.2 for database operations",
-        "AWS SDK v3 for cloud services integration (SES, SNS, S3)",
-        "Google Maps Services for geocoding and location data",
-        "Vonage SDK for SMS and communication services",
-        "Comprehensive validation with class-validator",
-        "Cron jobs with @nestjs/schedule for automation",
-        "Custom database migration tools with hash-based tracking",
+        "Node.js with Express and NestJS for service runtime",
+        "Python with FastAPI for high-throughput APIs",
+        "JWT-based access control and RBAC patterns",
+        "Security headers, input validation, and rate control",
+        "File upload pipelines and audit logging",
+        "Custom migration workflows for database safety",
       ],
     },
     {
       id: "data-viz",
       icon: FaChartLine,
-      title: "Data Visualization",
+      title: "Data Visualization & Reporting",
       subtitle: "ApexCharts • Maps • Tables",
       color: "purple",
-      description:
-        "Creating interactive data visualizations and mapping solutions for complex datasets.",
+      description: "Reporting interfaces and map-based analytics views.",
       details: [
-        "ApexCharts and React ApexCharts for dynamic charts",
-        "Mapbox GL and Google Maps API integration",
-        "React Calendar for scheduling interfaces",
-        "TanStack React Table for advanced data tables",
-        "Custom visualization components and dashboards",
-        "Real-time data updates and interactive features",
-        "Google Maps API 3.4.1 for location services",
-        "React Google Maps API 2.20.3 integration",
-        "Google Places Autocomplete 4.1.0 for address input",
-        "Geocoding services for address validation",
-        "Distance calculations and proximity services",
-        "Custom map components and overlays",
+        "ApexCharts for operational dashboards",
+        "Mapbox GL and Google Maps integrations",
+        "TanStack React Table for data grids",
+        "Real-time data updates for monitoring",
       ],
     },
     {
       id: "dev-tools",
       icon: FaTools,
-      title: "Development Tools",
+      title: "Build & Test Tooling",
       subtitle: "Vite • Jest • ESLint • Prettier",
       color: "orange",
-      description:
-        "Modern development workflow with cutting-edge build tools and testing frameworks.",
+      description: "Tooling for quality control and repeatable builds.",
       details: [
-        "Vite, Expo, and Next.js for fast bundling",
-        "Jest and React Testing Library for comprehensive testing",
-        "ESLint and Prettier for code quality and formatting",
-        "Babel 7 for JavaScript transpilation",
-        "PostCSS + Autoprefixer for CSS processing",
-        "Nodemon for development server automation",
-        "Git workflows and version control best practices",
-        "Vitest 1.6.0 for fast unit testing",
-        "Happy DOM 14.12.3 for browser simulation",
-        "Coverage reporting and test analytics",
-        "Automated testing in CI/CD pipelines",
-        "Code quality monitoring and metrics",
+        "Jest and React Testing Library for unit tests",
+        "Vitest for fast test execution",
+        "ESLint and Prettier for code quality",
+        "Babel and PostCSS for build pipelines",
       ],
     },
     {
       id: "ui-components",
       icon: FaPalette,
-      title: "UI Components & Utilities",
+      title: "UI Libraries & Utilities",
       subtitle: "React Icons • Dropzone • Scrollbars",
       color: "pink",
-      description:
-        "Comprehensive UI component libraries and utility tools for enhanced user experiences.",
+      description: "Component libraries and utilities used in UI systems.",
       details: [
-        "React Icons, MUI Icons, and Expo Vector Icons",
-        "React Dropzone for file handling interfaces",
-        "React Custom Scrollbars for enhanced scrolling",
-        "Refine.dev ecosystem (@refinedev/core, mui, cli)",
-        "Admin framework with devtools and kbar integration",
-        "Custom component development and theming",
-        "Material-UI 5.8.6 with comprehensive component library",
-        "MUI X Data Grid 6.6.0 for advanced data tables",
-        "Refine CLI 2.16.21 for project scaffolding",
-        "Kbar integration for keyboard shortcuts",
-        "Custom theming and component customization",
+        "React Icons, MUI Icons, Expo Vector Icons",
+        "React Dropzone for file input workflows",
+        "React Custom Scrollbars for UI behavior",
+        "Refine.dev for admin tooling and devtools",
       ],
     },
     {
       id: "deployment",
       icon: FaCloud,
-      title: "Deployment & Security",
-      subtitle: "Docker • AWS • Render.com • Security First",
+      title: "Deployment & Security Controls",
+      subtitle: "Docker • AWS • Render • Heroku",
       color: "teal",
-      description:
-        "Secure deployment strategies and comprehensive security implementations with containerization and cloud services.",
+      description: "Deployment, isolation, and security controls in production.",
       details: [
-        "Docker containerization for consistent environments",
-        "Docker Compose for multi-service orchestration (Vetscribe, PetPulse)",
-        "AWS RDS PostgreSQL for production databases",
-        "AWS Cognito for authentication and user management",
-        "AWS SES for email delivery and SNS for SMS notifications",
-        "AWS S3 for file storage and Google Cloud Storage integration",
-        "Render.com for backend and API hosting",
-        "Expo/EAS for mobile app builds and OTA updates",
-        "JWT with access & refresh token implementation",
-        "Password hashing with bcrypt security",
-        "API rate limiting and slowdown protection",
-        "Helmet for secure HTTP headers",
-        "Input validation and sanitization",
-        "CORS protection and security best practices",
-        "Heroku deployment with Procfile configuration",
-        "PostgreSQL database with SSL connections",
-        "Environment variable management",
-        "Production build optimization",
-        "Health checks and monitoring",
-        "Automated database migrations",
-        "Performance monitoring and logging",
+        "Docker and Docker Compose for service isolation",
+        "AWS RDS, S3, Cognito, SES, SNS integrations",
+        "Render and Heroku for hosting workflows",
+        "Health checks, logging, and monitoring",
       ],
     },
     {
       id: "database-orm",
       icon: FaChartLine,
-      title: "Database & ORM",
-      subtitle: "PostgreSQL • Custom Migrations • Drizzle ORM",
+      title: "Database Architecture",
+      subtitle: "PostgreSQL • MySQL • Migrations",
       color: "indigo",
-      description:
-        "Managing complex data relationships with modern ORM and custom migration systems for scalable applications.",
+      description: "Data modeling and schema management for system stability.",
       details: [
-        "PostgreSQL with SSL connections and security",
-        "Custom SQL-based migration system with hash-based tracking (Pawnec database-manager)",
-        "Web-based database management UI with React and Tailwind",
-        "Multi-environment database support (Development, Staging, Production)",
-        "Drizzle ORM 0.31.2 for type-safe database operations",
-        "Drizzle Kit 0.22.7 for schema management",
-        "Comprehensive migration system with version control",
-        "Database schema design for complex workflows",
-        "Background task scheduling and job management",
-        "BullMQ integration for queue processing",
-        "Data validation and integrity constraints",
-        "Performance optimization and indexing strategies",
-        "MySQL 2 (mysql2) for robust database operations",
-        "Database relationship management",
-        "Query optimization and performance tuning",
-        "Idempotent migration patterns for AWS RDS compatibility",
+        "PostgreSQL and MySQL for relational storage",
+        "Custom migration systems with hash tracking",
+        "Drizzle ORM for type-safe data access",
+        "Indexing strategies and query performance",
+        "Idempotent migrations for deployment safety",
       ],
     },
     {
       id: "queue-system",
       icon: FaTools,
-      title: "Queue & Job Processing",
-      subtitle: "BullMQ • Background Tasks • Automation",
+      title: "Queue-Based Processing",
+      subtitle: "BullMQ • Scheduling • Retries",
       color: "yellow",
-      description:
-        "Implementing robust job processing systems with BullMQ for complex workflow automation and background tasks.",
+      description: "Queue-worker systems for workflow orchestration.",
       details: [
-        "BullMQ job scheduling and execution system",
-        "Background task management with retry logic",
-        "Age-based job scheduling for complex protocols",
-        "Species-specific protocol automation",
-        "Job statistics and monitoring dashboard",
-        "Cron-based job processing with NestJS Scheduler",
-        "Queue management for complex workflows",
-        "Error handling and job failure recovery",
-        "Scalable job processing architecture",
-        "Job prioritization and load balancing",
-        "Real-time job monitoring and alerts",
-        "Distributed task processing",
+        "BullMQ scheduling and execution pipelines",
+        "Retry strategy and failure recovery",
+        "Workload partitioning and prioritization",
+        "Job monitoring and queue visibility",
       ],
     },
     {
       id: "admin-panel",
       icon: FaUser,
-      title: "Admin Panel Development",
-      subtitle: "Refine.dev • Material-UI • React 18",
+      title: "Operations Consoles",
+      subtitle: "Refine.dev • Material UI • React",
       color: "purple",
-      description:
-        "Creating powerful administrative interfaces with modern React frameworks and comprehensive data management.",
+      description: "Admin interfaces for operational workflows and data access.",
       details: [
-        "Refine.dev 4.47.1 for rapid admin panel development",
-        "Material-UI 5.8.6 with comprehensive component library",
-        "React 18 with TypeScript for type-safe development",
-        "React Hook Form 7.30.0 for efficient form handling",
-        "React Router v6.8.1 for navigation management",
-        "MUI X Data Grid 6.6.0 for advanced data tables",
-        "Refine CLI 2.16.21 for project scaffolding",
-        "Kbar integration for keyboard shortcuts",
-        "Custom theming and component customization",
-        "Advanced data filtering and search",
+        "Refine.dev for admin workflows",
+        "Material UI for data-heavy interfaces",
         "Role-based access control",
-        "Real-time data updates and notifications",
+        "Advanced data filtering and search",
       ],
     },
     {
       id: "experience",
       icon: FaUser,
-      title: "Professional IT Journey",
-      subtitle: "5+ Years IT & Development Experience",
+      title: "IT Operations Experience",
+      subtitle: "Infrastructure • Security • Support",
       color: "orange",
       description:
-        "Comprehensive experience spanning IT infrastructure management, full-stack development, and technical leadership across diverse industries.",
+        "Operational experience across infrastructure, security, and support systems.",
       details: [
-        "Chief Technology Officer leading complex management systems",
-        "IT infrastructure administration and cybersecurity implementation",
-        "Full-stack web and mobile application development",
-        "Network administration and system security management",
-        "Team leadership and technical mentoring in startup environments",
-        "Healthcare technology solutions with compliance focus",
-        "Cross-platform mobile app development with React Native",
-        "IT consulting and system architecture design",
+        "IT infrastructure administration and cybersecurity",
+        "System monitoring and incident response",
+        "Network administration and access control",
+        "Operational training and documentation",
       ],
     },
     {
       id: "innovation",
       icon: FaRocket,
-      title: "Innovation Hub",
-      subtitle: "AI • ML • Emerging Tech",
+      title: "R&D and Prototypes",
+      subtitle: "AI • Data Processing • Analytics",
       color: "pink",
-      description:
-        "Exploring cutting-edge technologies and pushing the boundaries of what's possible in software development.",
+      description: "Prototype systems for AI and data processing workflows.",
       details: [
-        "Google Generative AI integration for quiz generation (Cerevium)",
-        "AI-powered PDF processing and content extraction",
-        "Prompt engineering for accurate AI-generated content",
-        "Machine learning integration in web apps",
-        "AI-powered automation solutions",
-        "Blockchain and Web3 exploration",
-        "IoT device integration",
-        "Real-time data processing systems",
-        "AI-powered health monitoring systems",
-        "Automated workflow processing with BullMQ",
-        "Machine learning integration for predictions",
-        "Advanced analytics and reporting with Google BigQuery",
-        "Mobile-first responsive design",
-        "Firebase integration for authentication and real-time features",
-      ],
-    },
-    {
-      id: "philosophy",
-      icon: FaLightbulb,
-      title: "Development Philosophy",
-      subtitle: "Clean • Efficient • Scalable",
-      color: "teal",
-      description:
-        "My approach to software development focuses on creating maintainable, efficient, and scalable solutions.",
-      details: [
-        "Clean code principles and best practices",
-        "Performance optimization and monitoring",
-        "Security-first development approach",
-        "User experience and accessibility",
-        "Continuous learning and improvement",
+        "Generative AI integrations for content workflows",
+        "PDF processing and extraction pipelines",
+        "BigQuery analytics and reporting",
+        "Automation workflows with BullMQ",
       ],
     },
   ];
+
+  const allWidgets = [...systemFocusWidgets, ...expertiseWidgets];
 
   const handleWidgetClick = (widgetId) => {
     setActiveModal(widgetId);
@@ -378,7 +393,7 @@ const AboutContent = () => {
   };
 
   const getModalContent = () => {
-    const widget = interactiveWidgets.find((w) => w.id === activeModal);
+    const widget = allWidgets.find((w) => w.id === activeModal);
     if (!widget) return null;
 
     return (
@@ -452,24 +467,18 @@ const AboutContent = () => {
       px={{ base: 4, md: 0 }}
       position="relative"
     >
-      <Grid
-        templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-        gap={{ base: 8, md: 16 }}
-        w="full"
-        alignItems="center"
-      >
-        <GridItem>
-          <HeroHeader title="About" subtitle="I am, " highlightText="Me" />
-        </GridItem>
-
-        <GridItem alignSelf="center" position="relative">
-          <TextWithImage
-            textContent={textContent}
-            imageSrc={dev_avatar}
-            footerTag="Passionate Developer"
-          />
-        </GridItem>
-      </Grid>
+      <VStack align="stretch" spacing={{ base: 6, md: 8 }}>
+        <HeroHeader
+          title="Systems Profile"
+          subtitle="Engineering&nbsp;"
+          highlightText="Focus"
+        />
+        <TextWithImage
+          textContent={textContent}
+          imageSrc={dev_avatar}
+          footerTag="Systems Engineering Profile"
+        />
+      </VStack>
       <Box mt={{ base: 8, md: 12 }}>
         <Text
           fontSize={{ base: "lg", md: "xl" }}
@@ -479,7 +488,7 @@ const AboutContent = () => {
           className="poppins"
           textAlign="center"
         >
-          Explore My Expertise
+          Engineering Focus Areas
         </Text>
 
         <Grid
@@ -491,7 +500,123 @@ const AboutContent = () => {
           gap={{ base: 6, md: 8 }}
           w="full"
         >
-          {interactiveWidgets.map((widget) => (
+          {systemFocusWidgets.map((widget) => (
+            <GridItem key={widget.id}>
+              <Box
+                bg={cardBg}
+                p={6}
+                borderRadius="2xl"
+                boxShadow="lg"
+                border="1px solid"
+                borderColor={cardBorderColor}
+                cursor="pointer"
+                _hover={{
+                  transform: "translateY(-8px) scale(1.02)",
+                  boxShadow: "2xl",
+                  borderColor: `${widget.color}.400`,
+                  _before: {
+                    transform: "scaleX(1)",
+                  },
+                }}
+                transition="all 0.4s ease"
+                position="relative"
+                overflow="hidden"
+                onClick={() => handleWidgetClick(widget.id)}
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "4px",
+                  bg: `linear-gradient(90deg, ${widget.color}.400, ${widget.color}.600)`,
+                  transform: "scaleX(0)",
+                  transformOrigin: "left",
+                  transition: "transform 0.4s ease",
+                }}
+              >
+                <VStack spacing={4} align="center" textAlign="center">
+                  <Box
+                    w="60px"
+                    h="60px"
+                    borderRadius="full"
+                    bg={`${widget.color}.100`}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    transition="all 0.3s ease"
+                    _groupHover={{
+                      transform: "scale(1.1) rotate(5deg)",
+                    }}
+                  >
+                    <Icon
+                      as={widget.icon}
+                      boxSize={8}
+                      color={`${widget.color}.600`}
+                      transition="all 0.3s ease"
+                    />
+                  </Box>
+
+                  <Text
+                    fontSize="lg"
+                    fontWeight="bold"
+                    color={skillTextColor}
+                    className="poppins"
+                  >
+                    {widget.title}
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    color={`${widget.color}.600`}
+                    fontWeight="medium"
+                    className="poppins"
+                  >
+                    {widget.subtitle}
+                  </Text>
+
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    colorScheme={widget.color}
+                    borderRadius="full"
+                    _hover={{
+                      transform: "scale(1.05)",
+                      boxShadow: "md",
+                    }}
+                    transition="all 0.2s ease"
+                  >
+                    Learn More
+                  </Button>
+                </VStack>
+              </Box>
+            </GridItem>
+          ))}
+        </Grid>
+      </Box>
+
+      <Box mt={{ base: 8, md: 12 }}>
+        <Text
+          fontSize={{ base: "lg", md: "xl" }}
+          fontWeight="semibold"
+          color={textColor}
+          mb={8}
+          className="poppins"
+          textAlign="center"
+        >
+          Technical Capabilities
+        </Text>
+
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+          gap={{ base: 6, md: 8 }}
+          w="full"
+        >
+          {expertiseWidgets.map((widget) => (
             <GridItem key={widget.id}>
               <Box
                 bg={cardBg}
@@ -591,7 +716,7 @@ const AboutContent = () => {
         onClose={onClose}
         title={
           activeModal
-            ? interactiveWidgets.find((w) => w.id === activeModal)?.title
+            ? allWidgets.find((w) => w.id === activeModal)?.title
             : ""
         }
         size="md"
@@ -608,14 +733,14 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About Wilmarx - Full Stack Developer & IT Professional"
-        description="Learn about Wilmarx, a systems developer and tech enthusiast with expertise in full-stack development, React, TypeScript, Node.js, Python, mobile development, and IT infrastructure management."
+        title="About Wilmarx - Systems Engineer & Backend Architect"
+        description="Systems engineering profile focused on backend architecture, reliability engineering, queue-based processing systems, data architecture, and observability."
         url="https://the-marx-stack.vercel.app/about"
-        keywords="Wilmarx, about, full stack developer, systems developer, React, TypeScript, Node.js, Python, FastAPI, PostgreSQL, AWS, Docker, mobile development, React Native, IT professional, skills, expertise"
+        keywords="Wilmarx John Cayabyab, systems engineer, backend architect, reliability engineering, system design, failure modeling, queue-based processing, data architecture, observability, platform engineering"
       />
       <HeroWithContent
-        footerHead="Projects I've "
-        footerBody="Worked on"
+        footerHead="Systems"
+        footerBody="Portfolio"
         footerSub="Click to view"
         navigateTo="/projects"
       />
