@@ -87,12 +87,12 @@ const ContactContent = () => {
       id: "email",
       icon: FaEnvelope,
       title: "Email",
-      subtitle: "wilmarx@gmail.com",
+      subtitle: "wilmarx.cayabyab@gmail.com",
       color: "green",
       description:
         "Direct email for technical inquiries and collaboration requests.",
       action: "Send Email",
-      href: "mailto:wilmarx@gmail.com",
+      href: "mailto:wilmarx.cayabyab@gmail.com",
     },
     {
       id: "phone",
